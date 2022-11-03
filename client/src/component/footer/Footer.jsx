@@ -7,6 +7,37 @@ function Footer() {
     <div className="footer-1">
       <div className="foot">
         <div className="grp">
+          <h3>Contact</h3>
+          <p>MySpace@gmail.com</p>
+          <div className="socials">
+            <span className="css-118najv">
+              {" "}
+              <i className="fa-brands fa-linkedin"></i>{" "}
+            </span>
+            <span className="css-118najv">
+              {" "}
+              <i className="fa-brands fa-instagram"></i>{" "}
+            </span>
+            <span className="css-118najv">
+              {" "}
+              <i className="fa-brands fa-facebook"></i>{" "}
+            </span>
+            <span className="css-118najv">
+              {" "}
+              <i className="fa-brands fa-youtube"></i>{" "}
+            </span>
+            <span className="css-118najv">
+              <i className="fa-brands fa-twitter"></i>{" "}
+            </span>
+
+            <span className="css-118najv">
+              {" "}
+              <i className="fa-brands fa-github"></i>{" "}
+            </span>
+          </div>
+        </div>
+
+        <div className="grp">
           <h3>SHOP</h3>
           <p>My Account</p>
           <p>Terms and conditions</p>
@@ -36,25 +67,6 @@ function Footer() {
           <p>Archive</p>
           <p>Style</p>
         </div>
-      </div>
-      <div className="socials">
-        <span className="css-118najv">
-          <i className="fa-brands fa-linkedin"></i>
-        </span>
-        <span className="css-118najv">
-          <i className="fa-brands fa-facebook"></i>
-        </span>
-        <span className="css-118najv">
-          {" "}
-          <i className="fa-brands fa-youtube"></i>{" "}
-        </span>
-        <span className="css-118najv">
-          <i className="fa-brands fa-twitter"></i>{" "}
-        </span>
-
-        <span className="css-118najv">
-          <i className="fa-brands fa-github"></i>
-        </span>
       </div>
     </div>
   );
