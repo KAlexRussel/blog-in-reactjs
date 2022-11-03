@@ -1,5 +1,4 @@
 import React from "react";
-import blog from "../../image/blog.png";
 
 import "./navbar.css";
 
@@ -7,14 +6,7 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <div className="brand-title">
-          <a href="/">
-            <div className="icon">
-              <img src={blog} width="30px" alt="logo" />
-            </div>
-          </a>
-        </div>
-        <div href="#" className="toggle-button">
+        <div className="toggle-button">
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
@@ -24,9 +16,19 @@ function Navbar() {
             <li className="nav-link">
               <a href="/">HOME</a>
             </li>
+            <li className="nav-link">
+              <a href="/blog">BLOG</a>
+            </li>
+            <li className="nav-link">
+              <a href="/about">ABOUT</a>
+            </li>
+            <li className="nav-link">
+              <a href="/contact">CONTACT</a>
+            </li>
           </ul>
         </div>
       </nav>
+      <hr />
     </div>
   );
 }

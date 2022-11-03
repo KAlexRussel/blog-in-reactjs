@@ -1,0 +1,16 @@
+.story {
+  /* margin-top: 57px; */
+}
+body {
+  margin: 0px 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.main-image > img {
+  width: 30%;
+}
