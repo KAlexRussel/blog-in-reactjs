@@ -3,8 +3,8 @@
   /* position: relative; */
   justify-content: space-between;
   align-items: center;
-  background-color: #181814;
-  color: white;
+  background-color: #fff;
+  color: #181819;
   position: fixed;
   width: 100%;
   top: 0;
@@ -30,12 +30,12 @@
 .navbar-links li a {
   display: block;
   text-decoration: none;
-  color: white;
+  color: #181819;
   padding: 1rem;
 }
 
 .navbar-links li:hover {
-  background-color: #555;
+  background-color: aquamarine;
 }
 
 .toggle-button {
@@ -62,4 +62,8 @@ a {
 }
 p {
   color: black;
+}
+
+.icon {
+  display: block;
 }

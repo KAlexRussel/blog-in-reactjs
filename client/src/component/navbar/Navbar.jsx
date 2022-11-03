@@ -1,6 +1,8 @@
 import React from "react";
 import blog from "../../image/blog.png";
 
+import "./navbar.css";
+
 function Navbar() {
   return (
     <div>
@@ -9,7 +11,6 @@ function Navbar() {
           <a href="/">
             <div className="icon">
               <img src={blog} width="30px" alt="logo" />
-              <h2 className="logo">E-Gucci</h2>
             </div>
           </a>
         </div>
