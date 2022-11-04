@@ -4,10 +4,16 @@ import "./styles.css";
 
 const BlogList = ({ blogs }) => {
   return (
-    <div className="blogList-wrap">
-      {blogs.map((blog) => (
-        <BlogItem blog={blog} />
-      ))}
+    <div>
+      <div className="head-2">
+        <h2> Blogs</h2>
+      </div>
+
+      <div className="blogList-wrap">
+        {blogs.map((blog) => (
+          <BlogItem blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };

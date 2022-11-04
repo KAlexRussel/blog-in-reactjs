@@ -14,7 +14,7 @@ function Home() {
     <div>
       <div>
         <Navbar />
-        <Searchbar />
+        {/* <Searchbar /> */}
         <div className="main-content">
           <div className="main-image">
             <img src={quote} alt="quote" />

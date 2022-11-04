@@ -3,7 +3,10 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
 }
-
+.head-2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
 @media (max-width: 768px) {
   .blogList-wrap {
     grid-template-columns: repeat(2, 1fr);

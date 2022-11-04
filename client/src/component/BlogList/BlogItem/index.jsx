@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Chip from '../../../common/Chip';
+import Chip from "../../Chip";
 import "./styles.css";
 
 const BlogItem = ({
@@ -18,7 +18,7 @@ const BlogItem = ({
   return (
     <div className="blogItem-wrap">
       <img className="blogItem-cover" src={cover} alt="cover" />
-      {/* <Chip label={category} /> */}
+      <Chip label={category} />
       <h3>{title}</h3>
       <p className="blogItem-desc">{description}</p>
       <footer>
