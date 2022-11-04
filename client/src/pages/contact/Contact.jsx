@@ -10,6 +10,56 @@ function Contact() {
       <div className="head">
         <h3>CONTACT</h3>
       </div>
+      <div>
+        <form action="Post">
+          <div className="form-1">
+            <div className="form-11">
+              <input
+                className="form-control"
+                name="name"
+                type="text"
+                placeholder="NAME"
+                required=""
+                value=""
+              />
+              <input
+                className="form-control"
+                name="email"
+                type="email"
+                placeholder="EMAIL"
+                required=""
+                value=""
+              />
+            </div>
+            <div className="form-11">
+              <input
+                className="form-control"
+                name="name"
+                type="text"
+                placeholder="LASTNAME"
+                required=""
+                value=""
+              />
+              <input
+                className="form-control"
+                name="phone"
+                type="number"
+                placeholder="PHONE NUMBER "
+                required=""
+                value=""
+              />
+            </div>
+          </div>
+          <div className="form-12">
+            <textarea
+              class="form-control1"
+              placeholder="LEAVE YOUR MESSAGE HERE"
+              required=""
+            ></textarea>
+            <button className="button2">SEND</button>
+          </div>
+        </form>
+      </div>
       <div className="main-con">
         <div className="parag">
           <p>
@@ -21,13 +71,13 @@ function Contact() {
             Kit with more info.
           </p>
         </div>
-        <div className="vl"></div>
+        <div className="vls"></div>
         <div className="contact-1">
           <h3>EMAIL //</h3>
           <p>Kuavo12alex@gmail.com</p>
         </div>
       </div>
-      <div></div>
+
       <Footer />
     </div>
   );

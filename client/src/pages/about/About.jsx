@@ -7,6 +7,9 @@ function About() {
   return (
     <div className="body-1">
       <Navbar />
+      <div className="head-1">
+        <h3>ABOUT</h3>
+      </div>
       <div>
         <div>
           <img class="image-1" src={mystory} alt="mystory" />

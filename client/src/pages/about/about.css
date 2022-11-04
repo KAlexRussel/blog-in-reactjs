@@ -2,12 +2,16 @@
   margin: 0;
   padding: 0;
 }
+.head-1 {
+  margin-top: 20px;
+  text-align: center;
+}
 
 .image-1 {
   width: 100%;
   object-fit: cover;
   height: 400px;
-  margin-top: 5px;
+  margin-top: 6px;
   margin-bottom: 23px;
   justify-content: flex-start;
 }
