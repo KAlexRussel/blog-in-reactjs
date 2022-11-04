@@ -1,9 +1,9 @@
 import React from "react";
-function Notfound() {
+function AddEditBlog() {
   return (
     <div>
       <h1>About</h1>
     </div>
   );
 }
-export default Notfound;
+export default AddEditBlog;

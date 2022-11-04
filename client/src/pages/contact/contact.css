@@ -28,6 +28,7 @@
   margin: auto 39px;
 }
 form {
+  align-items: center;
 }
 .form-1 {
   display: flex;
@@ -46,9 +47,11 @@ form {
   margin: 20px 10px;
   background-color: #f4f1e8;
   width: 90%;
+  outline: none;
 }
 .form-control1 {
   border-top: none;
+  outline: none;
   border-left: none;
   border-right: none;
   margin: 20px auto;
@@ -66,6 +69,7 @@ form {
   height: 30px;
   padding: 7px 22px;
   margin: 1px auto;
+  outline: none;
   color: #f4f1e8;
 }
 .form-12 {

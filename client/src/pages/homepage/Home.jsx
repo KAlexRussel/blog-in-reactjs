@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../component/footer/Footer";
 import Navbar from "../../component/navbar/Navbar";
+import Searchbar from "../../component/Searchbar/Searchbar";
 import quote from "../../image/quote.png";
 import vacation from "../../image/vacation.jpeg";
 
@@ -11,6 +12,7 @@ function Home() {
     <div>
       <div>
         <Navbar />
+        <Searchbar />
         <div className="main-content">
           <div className="main-image">
             <img src={quote} alt="quote" />
