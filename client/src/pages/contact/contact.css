@@ -1,6 +1,10 @@
 .main-con {
   display: flex;
-  margin: 30px auto;
+  margin: 10px auto;
+}
+.head {
+  text-align: center;
+  margin-top: 30px;
 }
 
 .vl {
@@ -10,7 +14,7 @@
 }
 
 .parag {
-  width: 47%;
+  width: 48.5%;
   margin: auto 10px;
 }
 .parag > p {

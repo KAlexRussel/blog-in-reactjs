@@ -7,7 +7,7 @@ function Contact() {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="head">
         <h3>CONTACT</h3>
       </div>
       <div className="main-con">
