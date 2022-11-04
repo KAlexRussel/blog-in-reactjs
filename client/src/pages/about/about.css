@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.image-1 {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+  margin-top: 5px;
+  margin-bottom: 23px;
+  justify-content: flex-start;
+}
+.story {
+  max-width: 1020px;
+  margin: 5px auto;
+  line-height: 30px;
+  letter-spacing: 2px;
+  /* text-justify: auto; */
+  text-align: justify;
+}
+
+.body-1 {
+  margin: 0;
+  padding: 0;
+}
