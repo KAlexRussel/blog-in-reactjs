@@ -14,14 +14,16 @@ body {
 }
 .vl {
   border-left: 1px solid #181819;
-  height: 340px;
+  height: 320px;
   margin: auto 0px;
 }
 .main-image {
   display: block;
+  width: 39%;
+  margin: auto;
 }
 .main-image > img {
-  width: 50%;
+  width: 31%;
   opacity: 0.8;
 }
 
