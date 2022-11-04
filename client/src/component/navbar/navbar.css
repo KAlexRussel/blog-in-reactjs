@@ -7,6 +7,9 @@
   color: #181819;
 
   width: 100%;
+  position: fixed;
+  top: 0;
+  margin-bottom: 30px;
 }
 
 .brand-title {
@@ -69,6 +72,9 @@ p {
 .icon {
   display: block;
 }
+hr {
+  margin-top: 50px;
+}
 
 @media screen and (max-width: 500px) {
   .navbar {
@@ -101,9 +107,5 @@ p {
 
   .navbar-links.active {
     display: flex;
-  }
-
-  hr {
-    margin-top: 40px;
   }
 }

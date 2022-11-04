@@ -5,9 +5,9 @@ import "./styles.css";
 const BlogList = ({ blogs }) => {
   return (
     <div>
-      <div className="head-2">
+      {/* <div className="head-2">
         <h2> Blogs</h2>
-      </div>
+      </div> */}
 
       <div className="blogList-wrap">
         {blogs.map((blog) => (
