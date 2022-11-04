@@ -1,5 +1,6 @@
 .story {
-  /* margin-top: 57px; */
+  display: block;
+  text-align: center;
 }
 body {
   margin: 0px 20px;
@@ -8,9 +9,25 @@ body {
 .main-content {
   display: flex;
   justify-content: center;
-  margin: 20px auto;
+  /* margin: 20px auto; */
+  text-align: center;
+}
+.vl {
+  border-left: 1px solid #181819;
+  height: 340px;
+  margin: auto 0px;
+}
+.main-image {
+  display: block;
+}
+.main-image > img {
+  width: 50%;
+  opacity: 0.8;
 }
 
-.main-image > img {
-  width: 30%;
+.sunrise {
+  margin: 5px auto;
+}
+.sunrise > img {
+  /* opacity: 0.8; */
 }

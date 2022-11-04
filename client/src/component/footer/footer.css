@@ -5,6 +5,7 @@
 }
 .foot {
   display: flex;
+  padding: 0px 135px;
 }
 .socials {
   justify-content: center;
@@ -45,12 +46,16 @@
   }
   .foot {
     display: block;
+    padding: 0px 31px;
   }
 }
 
 @media screen and (max-width: 945px) {
   .footer-1 {
     margin-top: 45px;
+  }
+  .foot {
+    padding: 0px 31px;
   }
 
   .grp {

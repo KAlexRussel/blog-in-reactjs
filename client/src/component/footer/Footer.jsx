@@ -73,7 +73,7 @@ function Footer() {
         <hr />
         <div className="end">
           <p>
-            <i class="fa-solid fa-copyright"></i> 2022 KuavoDesign
+            <i className="fa-solid fa-copyright"></i> 2022 KuavoDesign
           </p>
         </div>
       </div>
