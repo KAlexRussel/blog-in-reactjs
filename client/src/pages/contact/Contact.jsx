@@ -7,6 +7,9 @@ function Contact() {
   return (
     <div>
       <Navbar />
+      <div>
+        <h3>CONTACT</h3>
+      </div>
       <div className="main-con">
         <div className="parag">
           <p>
@@ -20,7 +23,7 @@ function Contact() {
         </div>
         <div className="vl"></div>
         <div className="contact-1">
-          <h3>EMAIL</h3>
+          <h3>EMAIL //</h3>
           <p>Kuavo12alex@gmail.com</p>
         </div>
       </div>

@@ -1,3 +1,25 @@
 .main-con {
   display: flex;
+  margin: 30px auto;
+}
+
+.vl {
+  border-left: 1px solid #928f89;
+  height: 100px;
+  margin: auto 0px;
+}
+
+.parag {
+  width: 47%;
+  margin: auto 10px;
+}
+.parag > p {
+  /* margin-left: 13px; */
+  max-width: 404px;
+  margin: 2px auto;
+}
+
+.contact-1 {
+  width: 31%;
+  margin: auto 39px;
 }
