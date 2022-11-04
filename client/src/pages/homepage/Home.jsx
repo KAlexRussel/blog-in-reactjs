@@ -1,9 +1,11 @@
 import React from "react";
+import BlogList from "../../component/BlogList";
 import Footer from "../../component/footer/Footer";
 import Navbar from "../../component/navbar/Navbar";
 import Searchbar from "../../component/Searchbar/Searchbar";
 import quote from "../../image/quote.png";
 import vacation from "../../image/vacation.jpeg";
+import { blogList } from "../../config/data";
 
 import "./home.css";
 
@@ -27,6 +29,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <BlogList blogs={blogList} />
 
       <Footer />
     </div>
