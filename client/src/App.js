@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/blog:id" element={<Blog />} />
+        <Route exact path="/blog" element={<Blog />} />
         <Route exact path="/addblog" element={<AddEditBlog />} />
         <Route exact path="/editblog:id" element={<AddEditBlog />} />
         <Route exact path="*" element={<Notfound />} />
