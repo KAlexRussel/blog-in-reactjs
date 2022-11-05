@@ -8,6 +8,7 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Notfound from "./pages/Notfound/Notfound";
 import AddEditBlog from "./pages/EditBlog/AddEditBlog";
+import Blog1 from "./pages/Blog/Blog1";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="*" element={<Notfound />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/blog" element={<Blog1 />} />
       </Routes>
     </BrowserRouter>
   );
