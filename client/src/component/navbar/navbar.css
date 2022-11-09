@@ -37,6 +37,7 @@
   text-decoration: none;
   color: #181819;
   padding: 1rem;
+  font-weight: 900;
 }
 .navbar-links li a:hover {
   color: brown;

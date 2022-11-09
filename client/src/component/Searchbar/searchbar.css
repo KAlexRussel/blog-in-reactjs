@@ -5,6 +5,9 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
+.searchBar-wrap:hover {
+  border: 2px solid grey;
+}
 
 .searchBar-wrap form {
   display: flex;

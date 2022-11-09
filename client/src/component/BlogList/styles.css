@@ -18,3 +18,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* @media (max-width: 900px) {
+  .blogList-wrap {
+    display: block;
+  }
+} */

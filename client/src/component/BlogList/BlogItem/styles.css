@@ -9,6 +9,10 @@
   border-radius: 5px;
   margin-bottom: 0.5rem;
 }
+.blogItem-cover:hover {
+  transform: scale(1.1);
+}
+
 .blogItem-wrap h3 {
   margin: 0.5rem 0 1rem 0;
   flex: 1;
