@@ -61,7 +61,7 @@ function Contact() {
         </form>
       </div>
       <div className="main-con">
-        <div className="parag">
+        {/* <div className="parag">
           <p>
             If you have a product/brand that you think fits well on my website
             and want to advertise it, contact me. All of my posts are very well
@@ -70,10 +70,10 @@ function Contact() {
             imagery. If you're interested, ask me and I will send you my Media
             Kit with more info.
           </p>
-        </div>
-        <div className="vls"></div>
+        </div> */}
+        {/* <div className="vls"></div> */}
         <div className="contact-1">
-          <h3>EMAIL //</h3>
+          <h3>EMAIL:</h3>
           <p>Kuavo12alex@gmail.com</p>
         </div>
       </div>
