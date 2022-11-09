@@ -57,7 +57,7 @@ form {
   border-left: none;
   border-right: none;
   margin: 20px 10px;
-  background-color: #f4f1e8;
+  background-color: #fff;
   width: 90%;
   outline: none;
 }
@@ -67,14 +67,14 @@ form {
   border-left: none;
   border-right: none;
   margin: 20px auto;
-  background-color: #f4f1e8;
+  background-color: #fff;
   width: 400px;
   text-align: center;
   /* display: flex; */
   /* justify-content: center; */
 }
 .button2 {
-  background-color: #928f89;
+  background-color: #6190e8;
   border-radius: 10px;
   max-width: 100px;
   width: 100%;
@@ -83,6 +83,11 @@ form {
   margin: 1px auto;
   outline: none;
   color: #f4f1e8;
+  transition: 1s;
+}
+.button2:hover {
+  background-color: black;
+  color: #6190e8;
 }
 .form-12 {
   display: block;

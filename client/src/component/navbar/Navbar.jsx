@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./navbar.css";
 
 function Navbar() {
-  // const toggleButton = document.getElementsByClassName("toggle-button")[0];
+  // const navref = useRef();
+  // navref.current.classlist.toggle("responsiveness-nav");
+  // // const toggleButton = document.getElementsByClassName("toggle-button")[0];
   // const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 
   // toggleButton.addEventListener("click", () => {

@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../component/footer/Footer";
+import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
 import "./contact.css";
 
@@ -7,6 +8,7 @@ function Contact() {
   return (
     <div>
       <Navbar />
+      <Logo />
       <div className="head">
         <h3>CONTACT</h3>
       </div>

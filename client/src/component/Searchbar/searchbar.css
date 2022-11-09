@@ -4,9 +4,10 @@
   margin: 2.5rem auto 4rem auto;
   padding: 0.5rem;
   border-radius: 5px;
+  border: 2px solid grey;
 }
 .searchBar-wrap:hover {
-  border: 2px solid grey;
+  border: 2px solid #6190e8;
 }
 
 .searchBar-wrap form {

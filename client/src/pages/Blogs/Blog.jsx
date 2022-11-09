@@ -7,6 +7,7 @@ import "./blog.css";
 // import { Link } from "react-router-dom";
 import Navbar from "../../component/navbar/Navbar";
 import Footer from "../../component/footer/Footer";
+import Logo from "../../component/logo/Logo";
 
 const Blog = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const Blog = () => {
   return (
     <>
       <Navbar />
+      <Logo />
       {/* <Link className="blog-goBack" to="/">
         <span> &#8592;</span> <span>Go Back</span>
       </Link> */}

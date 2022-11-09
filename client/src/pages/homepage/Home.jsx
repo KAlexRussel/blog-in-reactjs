@@ -5,10 +5,11 @@ import Footer from "../../component/footer/Footer";
 import Navbar from "../../component/navbar/Navbar";
 import Searchbar from "../../component/Searchbar/Searchbar";
 import quote from "../../image/quote.png";
-import vacation from "../../image/vacation.jpeg";
+// import robot from "../../image/polo.jpg";
 import { blogList } from "../../config/data";
 
 import "./home.css";
+import Logo from "../../component/logo/Logo";
 
 function Home() {
   const [blogs, setBlogs] = useState(blogList);
@@ -38,22 +39,16 @@ function Home() {
     <div>
       <div>
         <Navbar />
-        <div className="head4">
-          <p>KUAVO ALEX'S BLOG</p>
-        </div>
-        <hr />
+        <Logo />
 
         <div className="main-content">
+          <div></div>
           <div className="main-image">
             <img src={quote} alt="quote" />
             <p className="story">
               The best time to act on this was decades ago.The second best time
               is now.
             </p>
-          </div>
-          <div className="vl"></div>
-          <div className="sunrise">
-            <img src={vacation} alt="sunrise" />
           </div>
         </div>
       </div>

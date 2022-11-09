@@ -1,15 +1,9 @@
 .story {
-  display: block;
-  text-align: center;
 }
 body {
   margin: 0px 20px;
 }
-.head4 {
-  text-align: center;
-  margin: 50px auto;
-  font-size: 43px;
-}
+
 .head4 > p {
   color: #181717;
 }
@@ -19,26 +13,21 @@ body {
   /* margin: 20px auto; */
   text-align: center;
   margin-bottom: 30px;
+  background: no-repeat url("../../image/fn.png");
+  height: 1000px;
+  color: #6190e8;
 }
 .vl {
   border-left: 1px solid #928f89;
   height: 320px;
-  margin: auto 0px;
+  margin: 5px auto;
 }
 
 .main-image {
-  display: block;
-  width: 39%;
-  margin: auto;
 }
 .main-image > img {
-  width: 31%;
-  opacity: 0.8;
 }
 
-.sunrise {
-  margin: 5px auto;
-}
 /* .sunrise > img {
   /* opacity: 0.8; 
 } */
@@ -50,7 +39,13 @@ body {
   .vl {
     display: none;
   }
+
   .main-image > img {
     margin-top: 20px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .main-image {
+    display: block;
   }
 }

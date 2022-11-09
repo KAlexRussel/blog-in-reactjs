@@ -1,0 +1,9 @@
+.head4 {
+  text-align: center;
+  margin: 50px auto;
+  font-size: 43px;
+}
+
+.head4 > p:hover {
+  color: #6190e8;
+}

@@ -3,9 +3,15 @@
   margin-top: 10px;
   bottom: 0;
 }
+.fa-brands {
+  color: #6190e8;
+}
+.fa-solid {
+  color: #6190e8;
+}
 .foot {
   display: flex;
-  padding: 0px 135px;
+  padding: 0px 34px;
 }
 .socials {
   justify-content: center;

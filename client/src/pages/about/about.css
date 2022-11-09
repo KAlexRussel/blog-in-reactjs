@@ -10,7 +10,7 @@
 .image-1 {
   width: 100%;
   object-fit: cover;
-  height: 400px;
+  /* height: 800px; */
   margin-top: 6px;
   margin-bottom: 23px;
   justify-content: flex-start;

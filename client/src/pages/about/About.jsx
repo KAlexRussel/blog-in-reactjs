@@ -1,12 +1,14 @@
 import React from "react";
 import Footer from "../../component/footer/Footer";
+import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
-import mystory from "../../image/mystory.jpg";
+import mystory from "../../image/wall.jpg";
 import "./about.css";
 function About() {
   return (
     <div className="body-1">
       <Navbar />
+      <Logo />
       <div className="head-1">
         <h3>ABOUT</h3>
       </div>

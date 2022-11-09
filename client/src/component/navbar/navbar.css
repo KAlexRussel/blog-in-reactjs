@@ -37,10 +37,12 @@
   text-decoration: none;
   color: #181819;
   padding: 1rem;
-  font-weight: 900;
+  font-weight: 500;
+  transition: 1s;
 }
 .navbar-links li a:hover {
-  color: brown;
+  color: #6190e8;
+  text-decoration: underline;
 }
 
 .toggle-button {
