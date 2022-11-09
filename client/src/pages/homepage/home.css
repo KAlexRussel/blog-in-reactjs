@@ -1,4 +1,5 @@
-.story {
+.storys {
+  width: 100px;
 }
 body {
   margin: 0px 20px;
@@ -9,9 +10,10 @@ body {
 }
 .main-content {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+
   /* margin: 20px auto; */
-  text-align: center;
+  text-align: right;
   margin-bottom: 30px;
   background: no-repeat url("../../image/fn.png");
   height: 1000px;
@@ -24,8 +26,10 @@ body {
 }
 
 .main-image {
+  margin: auto 50px;
 }
 .main-image > img {
+  width: 35%;
 }
 
 /* .sunrise > img {

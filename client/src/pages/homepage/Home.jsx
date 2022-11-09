@@ -45,7 +45,7 @@ function Home() {
           <div></div>
           <div className="main-image">
             <img src={quote} alt="quote" />
-            <p className="story">
+            <p className="storys">
               The best time to act on this was decades ago.The second best time
               is now.
             </p>
