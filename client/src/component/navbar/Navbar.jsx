@@ -1,11 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
+import { useState } from "react";
 
 import "./navbar.css";
 
 function Navbar() {
+  const [Mobile, setMobile] = useState(true);
   // const navref = useRef();
   // navref.current.classlist.toggle("responsiveness-nav");
-  // // const toggleButton = document.getElementsByClassName("toggle-button")[0];
+  // const toggleButton = document.getElementsByClassName("toggle-button")[0];
   // const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 
   // toggleButton.addEventListener("click", () => {
@@ -15,12 +17,10 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <div className="toggle-button">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
-        <div className="navbar-links">
+        <div
+          className={Mobile ? "navbar-links" : "navbar-links-mobile"}
+          onClick={() => setMobile(false)}
+        >
           <ul>
             <li className="nav-link">
               <a href="/">HOME</a>
@@ -35,6 +35,13 @@ function Navbar() {
               <a href="/contact">CONTACT</a>
             </li>
           </ul>
+        </div>
+        <div className="toggle-button" onClick={() => setMobile(!Mobile)}>
+          {Mobile ? (
+            <i class="fa-solid fa-bars"></i>
+          ) : (
+            <i class="fa-solid fa-xmark"></i>
+          )}
         </div>
       </nav>
       <hr />

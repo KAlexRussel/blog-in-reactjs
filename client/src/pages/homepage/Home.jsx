@@ -36,13 +36,13 @@ function Home() {
     setSearchKey("");
   };
   return (
-    <div>
+    <>
       <div>
         <Navbar />
+        <div className="body-1"></div>
         <Logo />
 
         <div className="main-content">
-          <div></div>
           <div className="main-image">
             <p className="storys">
               The best time to act on this was decades ago.The second best time
@@ -57,10 +57,11 @@ function Home() {
         formSubmit={handleSearchBar}
         handleSearchKey={(e) => setSearchKey(e.target.value)}
       />
+
       {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
 
       <Footer />
-    </div>
+    </>
   );
 }
 

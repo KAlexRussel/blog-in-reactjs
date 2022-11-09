@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogList from "../../component/BlogList";
 import EmptyList from "../../component/EmptyList";
 import Footer from "../../component/footer/Footer";
+import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
 import Searchbar from "../../component/Searchbar/Searchbar";
 import { blogList } from "../../config/data";
@@ -35,6 +36,7 @@ function Blog1() {
   return (
     <div>
       <Navbar />
+      <Logo />
 
       <Searchbar
         value={searchKey}

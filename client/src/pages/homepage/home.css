@@ -18,19 +18,10 @@ body {
   margin-bottom: 30px;
   background: no-repeat url("../../image/fn.png");
   height: 1000px;
-  color: #6190e8;
-}
-.vl {
-  border-left: 1px solid #928f89;
-  height: 320px;
-  margin: 5px auto;
 }
 
 .main-image {
   margin: auto 50px;
-}
-.main-image > img {
-  width: 35%;
 }
 
 /* .sunrise > img {
@@ -38,18 +29,24 @@ body {
 } */
 
 @media screen and (max-width: 900px) {
-  .main-content {
-    display: block;
-  }
   .vl {
     display: none;
   }
+  .main-content {
+    background: cover url("../../image/fn.png");
+  }
+  body {
+    margin: 0;
+  }
 
-  .main-image > img {
-    margin-top: 20px;
+  .main-image {
+    margin: auto;
+  }
+  .body-1 {
+    margin: 0px 40px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .main-image {
     display: block;
   }
