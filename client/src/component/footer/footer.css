@@ -1,0 +1,71 @@
+.footer-1 {
+  align-content: center;
+  margin-top: 10px;
+  bottom: 0;
+}
+.fa-brands {
+  color: #6190e8;
+}
+.fa-solid {
+  color: #6190e8;
+}
+.foot {
+  display: flex;
+  padding: 0px 34px;
+}
+.socials {
+  justify-content: center;
+  gap: 10px;
+}
+.css-118najv {
+  color: #181819;
+}
+.grp {
+  margin: 50px;
+  color: #181819;
+}
+
+.grp > p {
+  color: #181819;
+  margin: 15px 0px;
+}
+.grp > h3 {
+  margin-bottom: 20px;
+}
+
+.grp {
+  margin: 50px;
+  color: #181819;
+}
+.end {
+  margin: 20px 0px;
+  text-align: center;
+  gap: 10px;
+}
+.end > p {
+  gap: 10px;
+}
+
+@media screen and (max-width: 622px) {
+  .footer-1 {
+    margin-top: 10px;
+  }
+  .foot {
+    display: block;
+    padding: 0px 31px;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .footer-1 {
+    margin-top: 45px;
+  }
+  .foot {
+    padding: 0px 31px;
+  }
+
+  .grp {
+    margin: auto;
+    color: #181819;
+  }
+}

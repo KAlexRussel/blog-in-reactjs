@@ -1,0 +1,53 @@
+.storys {
+  text-align: center;
+  max-width: 323px;
+}
+body {
+  margin: 0px 20px;
+}
+
+.head4 > p {
+  color: #181717;
+}
+.main-content {
+  display: flex;
+  justify-content: right;
+
+  /* margin: 20px auto; */
+  text-align: right;
+  margin-bottom: 30px;
+  background: no-repeat url("../../image/fn.png");
+  height: 1000px;
+}
+
+.main-image {
+  margin: auto 50px;
+}
+
+/* .sunrise > img {
+  /* opacity: 0.8; 
+} */
+
+@media screen and (max-width: 900px) {
+  .vl {
+    display: none;
+  }
+  .main-content {
+    background: cover url("../../image/fn.png");
+  }
+  body {
+    margin: 0;
+  }
+
+  .main-image {
+    margin: auto;
+  }
+  .body-1 {
+    margin: 0px 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-image {
+    display: block;
+  }
+}

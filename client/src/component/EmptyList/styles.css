@@ -1,0 +1,13 @@
+.emptyList-wrap {
+  display: flex;
+  justify-content: center;
+}
+.emptyList-wrap img {
+  max-width: 250px;
+  width: 100%;
+}
+.pepe {
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}

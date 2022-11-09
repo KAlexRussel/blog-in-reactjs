@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.head-1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-1 {
+  width: 100%;
+  object-fit: cover;
+  /* height: 800px; */
+  margin-top: 6px;
+  margin-bottom: 23px;
+  justify-content: flex-start;
+}
+.story {
+  max-width: 1020px;
+  margin: 5px auto;
+  line-height: 30px;
+  letter-spacing: 2px;
+  /* text-justify: auto; */
+  text-align: justify;
+}
+
+.body-1 {
+  margin: 0;
+  padding: 0;
+}
