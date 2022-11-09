@@ -22,6 +22,11 @@
   max-width: 404px;
   margin: 2px auto;
 }
+.cont {
+  display: flex;
+  gap: 93px;
+  margin: 0px auto;
+}
 
 .contact-1 {
   /* width: 31%;

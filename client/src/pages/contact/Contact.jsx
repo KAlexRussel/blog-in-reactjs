@@ -72,9 +72,19 @@ function Contact() {
           </p>
         </div> */}
         {/* <div className="vls"></div> */}
-        <div className="contact-1">
-          <h3>EMAIL:</h3>
-          <p>Kuavo12alex@gmail.com</p>
+        <div className="cont">
+          <div className="contact-1">
+            <h3>EMAIL:</h3>
+            <p>Kuavo12alex@gmail.com</p>
+          </div>
+          <div className="contact-1">
+            <h3>Telephone:</h3>
+            <p>680675850</p>
+          </div>
+          <div className="contact-1">
+            <h3>City:</h3>
+            <p>chicago</p>
+          </div>
         </div>
       </div>
 
