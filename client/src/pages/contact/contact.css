@@ -43,7 +43,10 @@ form {
   display: block;
   width: 200px;
 }
-
+.form-12 {
+  display: block;
+  margin: 20px auto;
+}
 .form-control {
   border-top: none;
   border-left: none;
