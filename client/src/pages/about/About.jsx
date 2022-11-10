@@ -4,6 +4,7 @@ import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
 import mystory from "../../image/wall.jpg";
 import "./about.css";
+
 function About() {
   return (
     <div className="body-1">

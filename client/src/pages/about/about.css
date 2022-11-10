@@ -28,3 +28,21 @@
   margin: 0;
   padding: 0;
 }
+
+@media screen and (max-width: 500px) {
+  .image-1 {
+    width: 100%;
+    /* margin: 40px; */
+    object-fit: cover;
+    height: 226px;
+    margin-bottom: 43px;
+    margin-top: 30px;
+    justify-content: flex-start;
+  }
+  .story {
+    margin: auto 20px;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    font-size: 20px;
+  }
+}

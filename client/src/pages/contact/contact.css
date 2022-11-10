@@ -99,11 +99,22 @@ form {
 @media screen and (max-width: 900px) {
   .cont {
     gap: 20px;
+    display: block;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .cont {
+@media screen and (max-width: 500px) {
+  .form-1 {
     display: block;
+    margin: 2px auto;
+  }
+  .form-control {
+    width: 100%;
+  }
+  .form-control1 {
+    width: 100%;
+  }
+  .form-12 {
+    width: 100%;
   }
 }
