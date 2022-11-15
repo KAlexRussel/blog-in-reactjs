@@ -38,9 +38,9 @@ function Navbar() {
         </div>
         <div className="toggle-button" onClick={() => setMobile(!Mobile)}>
           {Mobile ? (
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           ) : (
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           )}
         </div>
       </nav>

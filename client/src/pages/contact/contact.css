@@ -47,7 +47,8 @@ form {
 
 .form-11 {
   display: block;
-  width: 200px;
+  /* width: 200px; */
+  margin: auto;
 }
 .form-12 {
   display: block;
@@ -57,9 +58,9 @@ form {
   border-top: none;
   border-left: none;
   border-right: none;
-  margin: 20px 10px;
+  margin: 20px auto;
   background-color: #fff;
-  width: 90%;
+  width: 100%;
   outline: none;
 }
 .form-control1 {
@@ -69,7 +70,7 @@ form {
   border-right: none;
   margin: 20px auto;
   background-color: #fff;
-  width: 400px;
+  width: 60%;
   text-align: center;
   /* display: flex; */
   /* justify-content: center; */
@@ -102,6 +103,13 @@ form {
     display: block;
   }
 }
+@media screen and (max-width: 770px) {
+  .form-11 {
+    display: block;
+    /* width: 200px; */
+    margin: auto 20px;
+  }
+}
 
 @media screen and (max-width: 500px) {
   .form-1 {
@@ -112,9 +120,15 @@ form {
     width: 100%;
   }
   .form-control1 {
-    width: 100%;
+    width: 50%;
+    margin: 0 54px;
   }
   .form-12 {
     width: 100%;
+  }
+  .form-11 {
+    display: block;
+    /* width: 200px; */
+    margin: auto 20px;
   }
 }

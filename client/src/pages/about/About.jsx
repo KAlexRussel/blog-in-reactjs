@@ -15,9 +15,9 @@ function About() {
       </div>
       <div>
         <div>
-          <img class="image-1" src={mystory} alt="mystory" />
+          <img className="image-1" src={mystory} alt="mystory" />
         </div>
-        <div class="story">
+        <div className="story">
           <p>
             I started my blogging journey back in 2013 as a creative outlet
             while working in corporate full-time. As I was putting in the daily

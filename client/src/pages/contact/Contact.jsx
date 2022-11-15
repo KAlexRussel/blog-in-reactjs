@@ -54,7 +54,7 @@ function Contact() {
           </div>
           <div className="form-12">
             <textarea
-              class="form-control1"
+              className="form-control1"
               placeholder="LEAVE YOUR MESSAGE HERE"
               required=""
             ></textarea>

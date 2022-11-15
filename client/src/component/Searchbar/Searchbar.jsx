@@ -12,7 +12,7 @@ const Searchbar = ({ formSubmit, value, handleSearchKey, clearSearch }) => (
       />
       {value && <span onClick={clearSearch}>X</span>}
       <button>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i className="fa-solid fa-magnifying-glass"></i>
       </button>
     </form>
   </div>
