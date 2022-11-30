@@ -4,7 +4,7 @@ import EmptyList from "../../component/EmptyList";
 import Footer from "../../component/footer/Footer";
 import Navbar from "../../component/navbar/Navbar";
 import Searchbar from "../../component/Searchbar/Searchbar";
-import quote from "../../image/quote.png";
+// import quote from "../../image/quote.png";
 // import robot from "../../image/polo.jpg";
 import { blogList } from "../../config/data";
 
