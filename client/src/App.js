@@ -9,20 +9,24 @@ import About from "./pages/about/About";
 import Notfound from "./pages/Notfound/Notfound";
 import AddEditBlog from "./pages/EditBlog/AddEditBlog";
 import Blog1 from "./pages/Blog/Blog1";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/blog/:id" element={<Blog />} />
-        <Route exact path="/addblog" element={<AddEditBlog />} />
-        <Route exact path="/editblog:id" element={<AddEditBlog />} />
-        <Route exact path="*" element={<Notfound />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/blog" element={<Blog1 />} />
-      </Routes>
+      <div className="app">
+        <ToastContainer />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/blog/:id" element={<Blog />} />
+          <Route exact path="/addblog" element={<AddEditBlog />} />
+          <Route exact path="/editblog:id" element={<AddEditBlog />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/blog" element={<Blog1 />} />
+          <Route exact path="*" element={<Notfound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
