@@ -1,8 +1,9 @@
 import React from "react";
 import BlogItem from "./BlogItem";
+
 import "./styles.css";
 
-const BlogList = ({ blogs }) => {
+const BlogList = ({ blogs, handleDelete }) => {
   return (
     <div>
       {/* <div className="head-2">
@@ -10,8 +11,8 @@ const BlogList = ({ blogs }) => {
       </div> */}
 
       <div className="blogList-wrap">
-        {blogs.map((blog) => (
-          <BlogItem blog={blog} />
+        {blogs.map((blog, index) => (
+          <BlogItem blog={blog} key={index} handleDelete={handleDelete} />
         ))}
       </div>
     </div>

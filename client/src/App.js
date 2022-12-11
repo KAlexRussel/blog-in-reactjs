@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/homepage/Home";
 
+import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 import Blog from "./pages/Blogs/Blog";
 import Contact from "./pages/contact/Contact";
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/blog/:id" element={<Blog />} />
           <Route exact path="/addblog" element={<AddEditBlog />} />
-          <Route exact path="/editblog:id" element={<AddEditBlog />} />
+          <Route exact path="/editblog/:id" element={<AddEditBlog />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/blog" element={<Blog1 />} />
