@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { blogList } from "../../config/data";
+// import { blogList } from "../../config/data";
 import Chip from "../../component/Chip";
-import EmptyList from "../../component/EmptyList";
+// import EmptyList from "../../component/EmptyList";
 import "./blog.css";
 // import { Link } from "react-router-dom";
 import Navbar from "../../component/navbar/Navbar";

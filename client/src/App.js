@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Notfound from "./pages/Notfound/Notfound";
 import AddEditBlog from "./pages/EditBlog/AddEditBlog";
+import AddEditBlog1 from "./pages/EditBlog1/AddEditBlog1";
 import Blog1 from "./pages/Blog/Blog1";
 import { ToastContainer } from "react-toastify";
 
@@ -21,7 +22,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/blog/:id" element={<Blog />} />
           <Route exact path="/addblog" element={<AddEditBlog />} />
-          <Route exact path="/editblog/:id" element={<AddEditBlog />} />
+          <Route exact path="/editblog/:id" element={<AddEditBlog1 />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/blog" element={<Blog1 />} />

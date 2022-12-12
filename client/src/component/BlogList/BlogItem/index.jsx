@@ -42,7 +42,7 @@ const BlogItem = ({
             </div>
           </Link>
           <div>
-            <button onClick={() => handleDelete(id)}>
+            <button className="fus" onClick={() => handleDelete(id)}>
               <i className="fa fa-trash" aria-hidden="true"></i>
             </button>
           </div>

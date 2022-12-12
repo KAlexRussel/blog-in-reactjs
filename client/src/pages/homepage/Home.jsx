@@ -1,19 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BlogList from "../../component/BlogList";
 import EmptyList from "../../component/EmptyList";
 import Footer from "../../component/footer/Footer";
+import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
 import Searchbar from "../../component/Searchbar/Searchbar";
-// import quote from "../../image/quote.png";
-// import robot from "../../image/polo.jpg";
-import { blogList } from "../../config/data";
+// import { blogList } from "../../config/data";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 import "./home.css";
-import Logo from "../../component/logo/Logo";
 
 function Home() {
-  const [blogs, setBlogs] = useState(blogList);
+  const [data, setData] = useState([]);
   const [searchKey, setSearchKey] = useState("");
+
+  useEffect(() => {
+    LoadBlogsData();
+  }, []);
+  const LoadBlogsData = async () => {
+    const response = await axios.get("http://localhost:3006/blogs");
+    if (response.status === 200) {
+      setData(response.data);
+    } else {
+      toast.error("something when wrong");
+    }
+  };
+  console.log("data", data);
+
+  const handleDelete = async (id) => {
+    if (window.confirm("do you really want to dele this blog?")) {
+      const response = await axios.delete(`http://localhost:3006/blogs/${id}`);
+      if (response.status === 200) {
+        toast.success("blog deleted succesfully");
+        LoadBlogsData();
+      } else {
+        toast.error("something when wrong");
+      }
+    }
+  };
 
   // Search submit
   const handleSearchBar = (e) => {
@@ -23,16 +48,16 @@ function Home() {
 
   // Search for blog by category
   const handleSearchResults = () => {
-    const allBlogs = blogList;
+    const allBlogs = data;
     const filteredBlogs = allBlogs.filter((blog) =>
       blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
-    setBlogs(filteredBlogs);
+    setData(filteredBlogs);
   };
 
   // Clear search and show all blogs
   const handleClearSearch = () => {
-    setBlogs(blogList);
+    setData([]);
     setSearchKey("");
   };
   return (
@@ -58,7 +83,11 @@ function Home() {
         handleSearchKey={(e) => setSearchKey(e.target.value)}
       />
 
-      {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+      {!data.length ? (
+        <EmptyList />
+      ) : (
+        <BlogList blogs={data} handleDelete={handleDelete} />
+      )}
 
       <Footer />
     </>

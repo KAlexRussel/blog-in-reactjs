@@ -5,6 +5,10 @@ import { toast } from "react-toastify";
 import Navbar from "../../component/navbar/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
 
+// import Paper from "@mui/material/Paper";
+// or
+import { Paper } from "@mui/material";
+
 import "./editblog.css";
 import { useEffect } from "react";
 
@@ -15,7 +19,7 @@ const initialState = {
   category: "",
   imageUrl: "",
 };
-const options = ["Travel", "Fashion", "Fitness", "sports", "Food", "Tech"];
+const options = ["Travel", "Fashion", "cooking", "sports", "Food", "Tech"];
 
 function AddEditBlog() {
   const [formValue, setFormValue] = useState(initialState);
@@ -27,7 +31,7 @@ function AddEditBlog() {
   const { id } = useParams();
 
   useEffect(() => {
-    if (id) {
+    if (!id) {
       setEditMode(true);
       getsingelBlog(id);
     } else {
@@ -60,51 +64,31 @@ function AddEditBlog() {
     if (!category) {
       setCategoryErrMsg("please select a category");
     }
-    const imageValidation = !editMode ? imageUrl : true;
+    // const imageValidation = !editMode ? imageUrl : true;
     if (title && description && category && imageUrl) {
       const currentDate = getDate();
-      if (!editMode) {
-        const updateBlogData = { ...formValue, date: currentDate };
-        console.log(updateBlogData);
-        const response = await axios
-          .post("http://localhost:3006/blogs", updateBlogData)
-          .then((resp) => {
-            toast.success("Blog Created Successfully");
-            console.log("Response", resp);
 
-            setFormValue({
-              ...formValue,
-              title: "",
-              description: "",
-              category: "",
-              imageUrl: "",
-            });
-            navigate("/");
-          })
-          .catch((err) => {
-            // toast.error("something went wrong");
-            console.log("something when wrong");
+      const updateBlogData = { ...formValue, date: currentDate };
+      console.log(updateBlogData);
+      const response = await axios
+        .post("http://localhost:3006/blogs", updateBlogData)
+        .then((resp) => {
+          toast.success("Blog Created Successfully");
+          console.log("Response", resp);
+
+          setFormValue({
+            ...formValue,
+            title: "",
+            description: "",
+            category: "",
+            imageUrl: "",
           });
-      } else {
-        const response = await axios
-          .put(`http://localhost:3006/blogs/${id}`, formValue)
-          .then((resp) => {
-            toast.success("Blog updated Successfully");
-            console.log("Response", resp);
-            setFormValue({
-              ...formValue,
-              title: "",
-              description: "",
-              category: "",
-              imageUrl: "",
-            });
-            navigate("/");
-          })
-          .catch((err) => {
-            // toast.error("something went wrong");
-            console.log("something when wrong");
-          });
-      }
+          navigate("/");
+        })
+        .catch((err) => {
+          // toast.error("something went wrong");
+          console.log("something when wrong");
+        });
 
       // console.log(response);
       // if (response.status === 201) {
@@ -152,71 +136,106 @@ function AddEditBlog() {
   };
   return (
     <div className="editwrap">
-      <Navbar />
-      <form action="" className="editform" onSubmit={handleSubmit} noValidate>
-        <p>{!editMode ? "Upadte blog" : "ADD blog"}</p>
-        <div>
-          <input
-            type="text"
-            value={title || ""}
-            name="title"
-            onChange={onInputChange}
-            label="Title"
-            placeholder="Title"
-            required
-            validation="Please provide a title"
-            invalid="true"
-          />
-          <br />
-          <input
-            type="text"
-            value={description || ""}
-            name="description"
-            onChange={onInputChange}
-            label="Description"
-            placeholder="Description"
-            required
-            validation="Please provide a Description"
-            textarea="true"
-            rows={4}
-            invalid="true"
-          />
+      <Paper elevation={3} className="editform">
+        <form action="" onSubmit={handleSubmit} noValidate>
+          <div>
+            <p className="headerww">{!editMode ? "Upadte blog" : "Add Blog"}</p>
+            <div>
+              <div className="">
+                <div>
+                  <label for="fname">Title:</label>
+                </div>
+                <div>
+                  <input
+                    className="title2"
+                    type="text"
+                    value={title || ""}
+                    name="title"
+                    onChange={onInputChange}
+                    label="Title"
+                    placeholder="Enter the title"
+                    required
+                    validation="Please provide a title"
+                    invalid="true"
+                  />
+                </div>
 
-          <br />
-          {!editMode && (
-            <>
-              <input
-                type="file"
-                onChange={onUploadImage}
-                required
-                validation="Please provide an image"
-                invalid="true"
-              />
+                <br />
+              </div>
+              <div className="input2">
+                <label for="fname">Description:</label>
+                <textarea
+                  className="textinput"
+                  type="text"
+                  value={description || ""}
+                  name="description"
+                  onChange={onInputChange}
+                  label="Description"
+                  placeholder="Enter the Description"
+                  required
+                  validation="Please provide a Description"
+                  textarea="true"
+                  rows={4}
+                  invalid="true"
+                />
+
+                <br />
+              </div>
+              <div className="input2">
+                <div>
+                  <label for="fname">Upload An Image:</label>
+                </div>
+                <div>
+                  <input
+                    className="imageupload"
+                    type="file"
+                    onChange={onUploadImage}
+                    required
+                    validation="Please provide an image"
+                    invalid="true"
+                  />
+                </div>
+
+                <br />
+              </div>
+              <div className="input2">
+                <div>
+                  <label for="fname">Select a category:</label>
+                </div>
+                <div>
+                  <select
+                    className="categorydropdown"
+                    onChange={onCategoryChange}
+                    value={category}
+                  >
+                    <option>please select category</option>
+                    {options.map((option, index) => (
+                      <option value={option || ""} key={index}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {categoryErrmsg && (
+                <div className="categoryerrormsg">{categoryErrmsg} </div>
+              )}
               <br />
-            </>
-          )}
-
-          <select
-            className="categorydropdown"
-            onChange={onCategoryChange}
-            value={category}
-          >
-            <option>please select category</option>
-            {options.map((option, index) => (
-              <option value={option || ""} key={index}>
-                {option}
-              </option>
-            ))}
-          </select>
-          {categoryErrmsg && (
-            <div className="categoryerrormsg">{categoryErrmsg} </div>
-          )}
-          <br />
-          <br />
-          <button type="submit">{editMode ? "UPADATE" : "ADD"}</button>
-          <button onClick={() => navigate("/")}>go back</button>
-        </div>
-      </form>
+              <br />
+              <div className="btm">
+                <button type="submit" className="submitbut">
+                  {" "}
+                  ADD
+                </button>
+                <button className="gobackbtn" onClick={() => navigate("/")}>
+                  go back
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </Paper>
     </div>
   );
 }
