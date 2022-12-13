@@ -96,8 +96,10 @@ form {
   padding: 7px 22px;
   margin: 1px auto;
   outline: none;
-  color: #f4f1e8;
+  font-weight: 600;
   transition: 1s;
+  align-items: center;
+  margin: 2px auto;
 }
 .button2:hover {
   background-color: black;

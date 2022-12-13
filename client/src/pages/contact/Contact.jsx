@@ -20,8 +20,9 @@ function Contact() {
   const [formValue, setFormValue] = useState(initialState);
   const { name, lastname, email, telephone, message } = formValue;
 
+  //libray use to link to other pages
   const navigate = useNavigate();
-
+  //storing the actual date of the day
   const getDate = () => {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, "0");
@@ -33,13 +34,14 @@ function Contact() {
     return today;
   };
 
+  //submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // const imageValidation = !editMode ? imageUrl : true;
     if (name && lastname && email && telephone && message) {
       const currentDate = getDate();
-
+      //axios is use perfome the crud operations
       const updateBlogData = { ...formValue, date: currentDate };
       console.log(updateBlogData);
       const response = await axios
@@ -66,6 +68,8 @@ function Contact() {
       console.log(response);
     }
   };
+
+  //permit you to write in the input
   const onInputChange = (e) => {
     let { name, value } = e.target;
 
@@ -131,24 +135,13 @@ function Contact() {
               value={message || ""}
               onChange={onInputChange}
             ></textarea>
-            <button type="submit" className="button2">
-              SEND
-            </button>
           </div>
+          <button type="submit" className="button2">
+            SEND
+          </button>
         </form>
       </div>
       <div className="main-con">
-        {/* <div className="parag">
-          <p>
-            If you have a product/brand that you think fits well on my website
-            and want to advertise it, contact me. All of my posts are very well
-            thought out and designed to engage with the reader and always
-            contain a captivating story with carefully planned and executed
-            imagery. If you're interested, ask me and I will send you my Media
-            Kit with more info.
-          </p>
-        </div> */}
-        {/* <div className="vls"></div> */}
         <div className="cont">
           <div className="contact-1">
             <h3>EMAIL:</h3>

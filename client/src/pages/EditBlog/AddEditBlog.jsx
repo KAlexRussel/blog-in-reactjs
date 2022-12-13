@@ -143,7 +143,7 @@ function AddEditBlog() {
             <div>
               <div className="">
                 <div>
-                  <label for="fname">Title:</label>
+                  <label htmlFor="fname">Title:</label>
                 </div>
                 <div>
                   <input
@@ -163,7 +163,7 @@ function AddEditBlog() {
                 <br />
               </div>
               <div className="input2">
-                <label for="fname">Description:</label>
+                <label htmlFor="fname">Description:</label>
                 <textarea
                   className="textinput"
                   type="text"
@@ -182,7 +182,7 @@ function AddEditBlog() {
               </div>
               <div className="input2">
                 <div>
-                  <label for="fname">Upload An Image:</label>
+                  <label htmlFor="fname">Upload An Image:</label>
                 </div>
                 <div>
                   <input
@@ -199,7 +199,7 @@ function AddEditBlog() {
               </div>
               <div className="input2">
                 <div>
-                  <label for="fname">Select a category:</label>
+                  <label htmlFor="fname">Select a category:</label>
                 </div>
                 <div>
                   <select
