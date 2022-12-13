@@ -36,10 +36,8 @@
 }
 
 .blogItem-wrap footer {
-  display: flex;
   align-items: center;
   margin-top: 1rem;
-  justify-content: space-between;
 }
 
 .blogItem-link {
@@ -81,7 +79,9 @@
 .operations {
   display: flex;
   justify-content: end;
-  gap: 5px;
+  gap: 10px;
+  align-items: center;
+  vertical-align: top;
 }
 @media screen and (max-width: 500px) {
   .blogItem-cover:hover {

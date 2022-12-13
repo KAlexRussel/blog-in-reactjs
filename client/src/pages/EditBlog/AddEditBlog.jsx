@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Navbar from "../../component/navbar/Navbar";
+// import Navbar from "../../component/navbar/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
 
 // import Paper from "@mui/material/Paper";
@@ -86,11 +86,11 @@ function AddEditBlog() {
           navigate("/");
         })
         .catch((err) => {
-          // toast.error("something went wrong");
+          toast.error("something went wrong");
           console.log("something when wrong");
         });
 
-      // console.log(response);
+      console.log(response);
       // if (response.status === 201) {
       //   toast.success("Blog Created Successfully");
       // } else {

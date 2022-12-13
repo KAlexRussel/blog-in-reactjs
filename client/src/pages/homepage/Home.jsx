@@ -29,7 +29,7 @@ function Home() {
   console.log("data", data);
 
   const handleDelete = async (id) => {
-    if (window.confirm("do you really want to dele this blog?")) {
+    if (window.confirm("do you really want to delete this blog?")) {
       const response = await axios.delete(`http://localhost:3006/blogs/${id}`);
       if (response.status === 200) {
         toast.success("blog deleted succesfully");

@@ -197,7 +197,7 @@ function AddEditBlog1() {
 
               <br />
             </div>
-            {!editMode && (
+            {editMode && (
               <>
                 <input
                   type="file"

@@ -39,6 +39,7 @@ const BlogItem = ({
           <Link to={`/editblog/${id}`}>
             <div>
               <i className="fas fa-pen-square"></i>
+              {/* <i class="fas fa-pencil-square-o" aria-hidden="true"></i> */}
             </div>
           </Link>
           <div>

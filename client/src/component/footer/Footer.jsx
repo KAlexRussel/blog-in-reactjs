@@ -5,7 +5,7 @@ import "./footer.css";
 function Footer() {
   return (
     <div>
-      <hr />
+      <hr className="line.h" />
       <div className="footer-1">
         <div className="foot">
           <div className="grp">
