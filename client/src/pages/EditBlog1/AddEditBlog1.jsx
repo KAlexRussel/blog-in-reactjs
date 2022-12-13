@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Navbar from "../../component/navbar/Navbar";
+// import Navbar from "../../component/navbar/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
 import { Paper } from "@mui/material";
 
@@ -61,7 +61,7 @@ function AddEditBlog1() {
     if (!category) {
       setCategoryErrMsg("please select a category");
     }
-    const imageValidation = !editMode ? imageUrl : true;
+    // const imageValidation = !editMode ? imageUrl : true;
     if (title && description && category && imageUrl) {
       const currentDate = getDate();
       if (!editMode) {

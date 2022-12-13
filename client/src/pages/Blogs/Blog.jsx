@@ -13,18 +13,20 @@ import { toast } from "react-toastify";
 
 const Blog = () => {
   const { id } = useParams();
-  const [blog, setBlog] = useState();
+  const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     if (id) {
-      getSingleBlog();
+      // let blog = blog.find((blog) => blog.id === parseInt(id));
+      getSingelBlog();
     }
   }, [id]);
 
-  const getSingleBlog = async () => {
-    const response = await axios.get(`http://localhost:3006/blogs/${id}`);
-    if (response.status === 200) {
-      setBlog(response.data);
+  const getSingelBlog = async (id) => {
+    const singleBlog = await axios.get(`http://localhost:3006/blogs/${id}`);
+    if (singleBlog.status === 200) {
+      toast.success("information receive succedfully");
+      setBlog({ ...singleBlog.data });
     } else {
       toast.error("something when wrong");
     }
@@ -40,7 +42,7 @@ const Blog = () => {
 
       <div className="blog-wrap">
         <header>
-          <p className="blog-date">Published {blog.createdAt}</p>
+          {/* <p className="blog-date">Published {blog.createdAt}</p> */}
           <h1>{blog && blog.title}</h1>
           <div className="blog-subCategory">
             {blog.subCategory.map((category, i) => (

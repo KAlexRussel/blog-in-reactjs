@@ -49,6 +49,16 @@
       "id": 6
     }
   ],
-
-  "contact": []
+  "contact": [
+    {
+      "name": "Alex",
+      "lastname": "Russel",
+      "email": "lepan38918@adroh.com",
+      "telephone": "67979797",
+      "message": "i love what you do",
+      "": "e",
+      "date": "12/13/2022",
+      "id": 1
+    }
+  ]
 }

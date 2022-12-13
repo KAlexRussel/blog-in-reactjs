@@ -63,6 +63,12 @@ form {
   width: 100%;
   outline: none;
 }
+.form-control:hover {
+  border: 2px solid #6190e8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
 .form-control1 {
   border-top: none;
   outline: none;
@@ -74,6 +80,12 @@ form {
   text-align: center;
   /* display: flex; */
   /* justify-content: center; */
+}
+.form-control1:hover {
+  border-top: none;
+  outline: none;
+  border-left: none;
+  border-right: none;
 }
 .button2 {
   background-color: #6190e8;

@@ -5,9 +5,72 @@ import Navbar from "../../component/navbar/Navbar";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+// import { Paper } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./contact.css";
 
+const initialState = {
+  name: "",
+  lastname: "",
+  email: "",
+  telephone: "",
+  message: "",
+};
 function Contact() {
+  const [formValue, setFormValue] = useState(initialState);
+  const { name, lastname, email, telephone, message } = formValue;
+
+  const navigate = useNavigate();
+
+  const getDate = () => {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, "0");
+    let mm = String(today.getMonth() + 1).padStart(2, "0"); //
+    let yyyy = today.getFullYear();
+
+    today = mm + "/" + dd + "/" + yyyy;
+
+    return today;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // const imageValidation = !editMode ? imageUrl : true;
+    if (name && lastname && email && telephone && message) {
+      const currentDate = getDate();
+
+      const updateBlogData = { ...formValue, date: currentDate };
+      console.log(updateBlogData);
+      const response = await axios
+        .post("http://localhost:3006/contact", updateBlogData)
+        .then((resp) => {
+          toast.success("Message sent Successfully");
+          console.log("Response", resp);
+
+          setFormValue({
+            ...formValue,
+            name: "",
+            lastname: "",
+            email: "",
+            telephone: "",
+            message: "",
+          });
+          navigate("/");
+        })
+        .catch((err) => {
+          toast.error("something went wrong");
+          console.log("something when wrong");
+        });
+
+      console.log(response);
+    }
+  };
+  const onInputChange = (e) => {
+    let { name, value } = e.target;
+
+    setFormValue({ ...formValue, [name]: value });
+  };
   return (
     <div>
       <Navbar />
@@ -16,7 +79,7 @@ function Contact() {
         <h3>CONTACT</h3>
       </div>
       <div>
-        <form action="Post">
+        <form action="Post" onSubmit={handleSubmit}>
           <div className="form-1">
             <div className="form-11">
               <input
@@ -24,44 +87,53 @@ function Contact() {
                 name="name"
                 type="text"
                 placeholder="NAME"
-                required=""
-                value=""
+                required
+                value={name || ""}
+                onChange={onInputChange}
               />
               <input
                 className="form-control"
                 name="email"
                 type="email"
                 placeholder="EMAIL"
-                required=""
-                value=""
+                required
+                value={email || ""}
+                onChange={onInputChange}
               />
             </div>
             <div className="form-11">
               <input
                 className="form-control"
-                name="name"
+                name="lastname"
                 type="text"
                 placeholder="LASTNAME"
-                required=""
-                value=""
+                required
+                value={lastname || ""}
+                onChange={onInputChange}
               />
               <input
                 className="form-control"
-                name="phone"
+                name="telephone"
                 type="number"
                 placeholder="PHONE NUMBER "
-                required=""
-                value=""
+                required
+                value={telephone || ""}
+                onChange={onInputChange}
               />
             </div>
           </div>
           <div className="form-12">
             <textarea
+              name="message"
               className="form-control1"
               placeholder="LEAVE YOUR MESSAGE HERE"
-              required=""
+              required
+              value={message || ""}
+              onChange={onInputChange}
             ></textarea>
-            <button className="button2">SEND</button>
+            <button type="submit" className="button2">
+              SEND
+            </button>
           </div>
         </form>
       </div>

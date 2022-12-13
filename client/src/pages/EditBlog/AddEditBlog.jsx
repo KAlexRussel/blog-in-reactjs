@@ -119,7 +119,7 @@ function AddEditBlog() {
         toast.success("image uploaded succesfully", {
           closeOnClick: false,
           closeButton: false,
-          autoClose: 3000,
+          autoClose: 2000,
           // className: style.toast_success,
         });
         setFormValue({ ...formValue, imageUrl: resp.data.secure_url });
@@ -137,7 +137,7 @@ function AddEditBlog() {
   return (
     <div className="editwrap">
       <Paper elevation={3} className="editform">
-        <form action="" onSubmit={handleSubmit} noValidate>
+        <form action="" onSubmit={handleSubmit}>
           <div>
             <p className="headerww">{!editMode ? "Upadte blog" : "Add Blog"}</p>
             <div>
@@ -155,7 +155,7 @@ function AddEditBlog() {
                     label="Title"
                     placeholder="Enter the title"
                     required
-                    validation="Please provide a title"
+                    // validation="Please provide a title"
                     invalid="true"
                   />
                 </div>
@@ -170,7 +170,6 @@ function AddEditBlog() {
                   value={description || ""}
                   name="description"
                   onChange={onInputChange}
-                  label="Description"
                   placeholder="Enter the Description"
                   required
                   validation="Please provide a Description"
