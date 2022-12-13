@@ -2,6 +2,9 @@ import React from "react";
 import Footer from "../../component/footer/Footer";
 import Logo from "../../component/logo/Logo";
 import Navbar from "../../component/navbar/Navbar";
+import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 import "./contact.css";
 
 function Contact() {
