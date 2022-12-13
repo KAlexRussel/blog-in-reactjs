@@ -83,7 +83,7 @@ function Contact() {
         <h3>CONTACT</h3>
       </div>
       <div>
-        <form action="Post" onSubmit={handleSubmit}>
+        <form action="Post" onSubmit={handleSubmit} className="form-0">
           <div className="form-1">
             <div className="form-11">
               <input
@@ -136,9 +136,11 @@ function Contact() {
               onChange={onInputChange}
             ></textarea>
           </div>
-          <button type="submit" className="button2">
-            SEND
-          </button>
+          <div className="butntn">
+            <button type="submit" className="button2">
+              SEND
+            </button>
+          </div>
         </form>
       </div>
       <div className="main-con">

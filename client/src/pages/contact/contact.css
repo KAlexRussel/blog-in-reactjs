@@ -2,6 +2,9 @@
   display: flex;
   margin: 10px auto;
 }
+.form-0 {
+  align-items: center;
+}
 .head {
   text-align: center;
   margin-top: 20px;
@@ -104,6 +107,11 @@ form {
 .button2:hover {
   background-color: black;
   color: #6190e8;
+}
+.butntn {
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
 }
 .form-12 {
   display: block;
