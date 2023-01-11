@@ -10,8 +10,10 @@ import Footer from "../../component/footer/Footer";
 import Logo from "../../component/logo/Logo";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
+  const [data, setData] = useState([]);
   const [blog, setBlog] = useState();
   const { id } = useParams();
 
@@ -31,6 +33,31 @@ const Blog = () => {
     } else {
       toast.error("something when wrong");
       console.log("something when wrong");
+    }
+  };
+  useEffect(() => {
+    LoadBlogsData();
+  }, []);
+  const LoadBlogsData = async () => {
+    const response = await axios.get("http://localhost:3006/blogs");
+    if (response.status === 200) {
+      setData(response.data);
+    } else {
+      toast.error("something when wrong");
+    }
+  };
+  console.log("data", data);
+  //delete data
+  const handleDelete = async (id) => {
+    if (window.confirm("do you really want to delete this blog?")) {
+      const response = await axios.delete(`http://localhost:3006/blogs/${id}`);
+      if (response.status === 200) {
+        toast.success("blog deleted succesfully");
+        LoadBlogsData();
+        <Link to={`/`} />;
+      } else {
+        toast.error("something when wrong");
+      }
     }
   };
 
@@ -58,6 +85,21 @@ const Blog = () => {
         </header>
         <img src={blog && blog.imageUrl} alt="cover" />
         <p className="blog-desc">{blog && blog.description}</p>
+        <div className="operations">
+          <Link to={`/editblog/${id}`}>
+            <div>
+              <i className="fas fa-pen-square"></i>
+              {/* <i class="fas fa-pencil-square-o" aria-hidden="true"></i> */}
+            </div>
+          </Link>
+          <div>
+            <Link to={"/"}>
+              <button className="fus" onClick={() => handleDelete(id)}>
+                <i className="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
 
       <Footer />

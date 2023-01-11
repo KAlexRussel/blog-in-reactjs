@@ -8,24 +8,30 @@ import Searchbar from "../../component/Searchbar/Searchbar";
 // import { blogList } from "../../config/data";
 import { toast } from "react-toastify";
 import axios from "axios";
+import useAxiosFetch from "../../hooks/useAxiosFetch";
 
 import "./home.css";
 
 function Home() {
   const [data, setData] = useState([]);
   const [searchKey, setSearchKey] = useState("");
+  const { datas } = useAxiosFetch(`http://localhost:3006/blogs`);
 
   useEffect(() => {
-    LoadBlogsData();
-  }, []);
-  const LoadBlogsData = async () => {
-    const response = await axios.get("http://localhost:3006/blogs");
-    if (response.status === 200) {
-      setData(response.data);
-    } else {
-      toast.error("something when wrong");
-    }
-  };
+    setData(datas);
+  }, [datas]);
+
+  // useEffect(() => {
+  //   LoadBlogsData();
+  // }, []);
+  // const LoadBlogsData = async () => {
+  //   const response = await axios.get("http://localhost:3006/blogs");
+  //   if (response.status === 200) {
+  //     setData(response.data);
+  //   } else {
+  //     toast.error("something when wrong");
+  //   }
+  // };
   console.log("data", data);
 
   const handleDelete = async (id) => {
@@ -33,7 +39,8 @@ function Home() {
       const response = await axios.delete(`http://localhost:3006/blogs/${id}`);
       if (response.status === 200) {
         toast.success("blog deleted succesfully");
-        LoadBlogsData();
+        // LoadBlogsData();
+        setData(datas);
       } else {
         toast.error("something when wrong");
       }

@@ -106,12 +106,15 @@ function AddEditBlog() {
     setFormValue({ ...formValue, [name]: value });
   };
   const onUploadImage = (e) => {
-    const files = e.target.files[0];
-    console.log("file", files);
+    const file = e.target.files[0];
+    console.log("file", file);
+    // const base64 = convertBase64(file);
+    // console.log(base64);
+    // setFormValue({ ...formValue, imageUrl: base64 });
     const formData = new FormData();
 
     formData.append("upload_preset", "m8urlyzp");
-    formData.append("file", files);
+    formData.append("file", file);
 
     axios
       .post("https://api.cloudinary.com/v1_1/dmszaahd1/image/upload", formData)
@@ -119,9 +122,10 @@ function AddEditBlog() {
         toast.success("image uploaded succesfully", {
           closeOnClick: false,
           closeButton: false,
-          autoClose: 2000,
+          autoClose: 3000,
           // className: style.toast_success,
         });
+        // setLoadBlogsData();
         setFormValue({ ...formValue, imageUrl: resp.data.secure_url });
         console.log("Response", resp);
       })
@@ -130,6 +134,20 @@ function AddEditBlog() {
         console.log("something when wrong");
       });
   };
+  //converting an image to a string
+  // const convertBase64 = (files) => {
+  //   return new Promise((resolve, reject) => {
+  //     const fileReader = new FileReader();
+  //     fileReader.readAsDataURL(files);
+
+  //     fileReader.onload= () => {
+  //       resolve(fileReader.result);
+  //     };
+  //     fileReader.onerror= error => {
+  //       reject(error);
+  //     };
+  //   });
+  // };
   const onCategoryChange = (e) => {
     setCategoryErrMsg(null);
     setFormValue({ ...formValue, category: e.target.value });
