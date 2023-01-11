@@ -8,7 +8,7 @@ import { Paper } from "@mui/material";
 
 import "./editblog.css";
 import { useEffect } from "react";
-import Navbar from "../../component/navbar/Navbar";
+// import Navbar from "../../component/navbar/Navbar";
 
 //m8urlyzp
 const initialState = {
@@ -123,9 +123,13 @@ function AddEditBlog1() {
     let { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
+
   const onUploadImage = (e) => {
     const files = e.target.files[0];
     console.log("file", files);
+    // const base64 = convertBase64(files);
+    // console.log(base64);
+    // setFormValue({ ...formValue, imageUrl: base64 });
     const formData = new FormData();
 
     formData.append("upload_preset", "m8urlyzp");
@@ -148,6 +152,20 @@ function AddEditBlog1() {
         console.log("something when wrong");
       });
   };
+  //converting an image to a string
+  // const convertBase64 = (files) => {
+  //   return new Promise((resolve, reject) => {
+  //     const fileReader = new FileReader();
+  //     fileReader.readAsDataURL(files);
+
+  //     fileReader.onload= () => {
+  //       resolve(fileReader.result);
+  //     };
+  //     fileReader.onerror= error => {
+  //       reject(error);
+  //     };
+  //   });
+  // };
   const onCategoryChange = (e) => {
     setCategoryErrMsg(null);
     setFormValue({ ...formValue, category: e.target.value });
@@ -155,7 +173,7 @@ function AddEditBlog1() {
   return (
     <>
       <div className="editwrap">
-        <Navbar />
+        {/* <Navbar /> */}
         <Paper elevation={3} className="editform">
           <form action="" onSubmit={handleSubmit} noValidate>
             <p className="headerww">{editMode ? "Upadate Blog" : "ADD blog"}</p>
@@ -202,14 +220,24 @@ function AddEditBlog1() {
               </div>
               {editMode && (
                 <>
-                  <input
-                    type="file"
-                    onChange={onUploadImage}
-                    required
-                    validation="Please provide an image"
-                    invalid="true"
-                  />
-                  <br />
+                  <div className="input2">
+                    <div>
+                      <label htmlFor="fname">Upload An Image:</label>
+                    </div>
+
+                    <div>
+                      <input
+                        className="imageupload"
+                        type="file"
+                        onChange={onUploadImage}
+                        required
+                        validation="Please provide an image"
+                        invalid="true"
+                      />
+                    </div>
+
+                    <br />
+                  </div>
                 </>
               )}
               <div className="input2">
