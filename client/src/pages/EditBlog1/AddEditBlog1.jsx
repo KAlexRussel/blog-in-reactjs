@@ -84,7 +84,7 @@ function AddEditBlog1() {
             navigate("/");
           })
           .catch((err) => {
-            // toast.error("something went wrong");
+            toast.error("something went wrong");
             console.log("something when wrong");
           });
       } else {

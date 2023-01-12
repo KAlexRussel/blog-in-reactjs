@@ -105,49 +105,74 @@ function AddEditBlog() {
     let { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
+
+  //converting an image to a string
+  const convertBase64 = (file) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload = () => {
+      // resolve(fileReader.result);
+      console.log(fileReader.result);
+    };
+    fileReader.onerror = (error) => {
+      // reject(error);
+      console.log("Error:", error);
+    };
+  };
+
   const onUploadImage = (e) => {
     const file = e.target.files[0];
-    console.log("file", file);
-    // const base64 = convertBase64(file);
-    // console.log(base64);
-    // setFormValue({ ...formValue, imageUrl: base64 });
-    const formData = new FormData();
+    console.log("file", e.target.files[0]);
+    // const fileReader = new FileReader();
+    // fileReader.readAsDataURL(file);
 
-    formData.append("upload_preset", "m8urlyzp");
-    formData.append("file", file);
-
-    axios
-      .post("https://api.cloudinary.com/v1_1/dmszaahd1/image/upload", formData)
-      .then((resp) => {
-        toast.success("image uploaded succesfully", {
-          closeOnClick: false,
-          closeButton: false,
-          autoClose: 3000,
-          // className: style.toast_success,
-        });
-        // setLoadBlogsData();
-        setFormValue({ ...formValue, imageUrl: resp.data.secure_url });
-        console.log("Response", resp);
+    // fileReader.onload = () => {
+    //   // resolve(fileReader.result);
+    //   console.log(fileReader.result);
+    // };
+    // fileReader.onerror = (error) => {
+    //   // reject(error);
+    //   console.log("Error:", error);
+    // };
+    // const imgbase64 = file;
+    let imgbase64;
+    convertBase64(file)
+      .then((result) => {
+        imgbase64 = result;
       })
-      .catch((err) => {
-        toast.error("something went wrong");
-        console.log("something when wrong");
-      });
-  };
-  //converting an image to a string
-  // const convertBase64 = (files) => {
-  //   return new Promise((resolve, reject) => {
-  //     const fileReader = new FileReader();
-  //     fileReader.readAsDataURL(files);
+      .catch((e) => console.log(e));
 
-  //     fileReader.onload= () => {
-  //       resolve(fileReader.result);
-  //     };
-  //     fileReader.onerror= error => {
-  //       reject(error);
-  //     };
-  //   });
-  // };
+    // const imgbase64 = convertBase64(file);
+    // console.log(imgbase64);
+
+    setFormValue({ ...formValue, imageUrl: imgbase64 });
+
+    //send the image to cloundinary to convert it to a link
+    // const formData = new FormData();
+
+    // formData.append("upload_preset", "m8urlyzp");
+    // formData.append("file", file);
+
+    // axios
+    //   .post("https://api.cloudinary.com/v1_1/dmszaahd1/image/upload", formData)
+    //   .then((resp) => {
+    //     toast.success("image uploaded succesfully", {
+    //       closeOnClick: false,
+    //       closeButton: false,
+    //       autoClose: 3000,
+    //       // className: style.toast_success,
+    //     });
+    //     // setLoadBlogsData();
+    //     setFormValue({ ...formValue, imageUrl: resp.data.secure_url });
+    //     console.log("Response", resp);
+    //   })
+    //   .catch((err) => {
+    //     toast.error("something went wrong");
+    //     console.log("something when wrong");
+    //   });
+  };
+
   const onCategoryChange = (e) => {
     setCategoryErrMsg(null);
     setFormValue({ ...formValue, category: e.target.value });
