@@ -11,11 +11,20 @@ import Logo from "../../component/logo/Logo";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import useAxiosFetch from "../../hooks/useAxiosFetch";
+import useAxiosDelete from "../../hooks/useAxiosDelete";
 
 const Blog = () => {
   const [data, setData] = useState([]);
   const [blog, setBlog] = useState();
+
   const { id } = useParams();
+  const { datas } = useAxiosFetch(`http://localhost:3006/blogs${id}`);
+  // const { data1 } = useAxiosDelete(`http://localhost:3006/blogs${id}`);
+
+  useEffect(() => {
+    setData(datas);
+  }, [datas]);
 
   useEffect(() => {
     if (id) {
@@ -35,17 +44,17 @@ const Blog = () => {
       console.log("something when wrong");
     }
   };
-  useEffect(() => {
-    LoadBlogsData();
-  }, []);
-  const LoadBlogsData = async () => {
-    const response = await axios.get("http://localhost:3006/blogs");
-    if (response.status === 200) {
-      setData(response.data);
-    } else {
-      toast.error("something when wrong");
-    }
-  };
+  // useEffect(() => {
+  //   LoadBlogsData();
+  // }, []);
+  // const LoadBlogsData = async () => {
+  //   const response = await axios.get("http://localhost:3006/blogs");
+  //   if (response.status === 200) {
+  //     setData(response.data);
+  //   } else {
+  //     toast.error("something when wrong");
+  //   }
+  // };
   console.log("data", data);
   //delete data
   const handleDelete = async (id) => {
@@ -53,7 +62,7 @@ const Blog = () => {
       const response = await axios.delete(`http://localhost:3006/blogs/${id}`);
       if (response.status === 200) {
         toast.success("blog deleted succesfully");
-        LoadBlogsData();
+        setData(datas);
         <Link to={`/`} />;
       } else {
         toast.error("something when wrong");
