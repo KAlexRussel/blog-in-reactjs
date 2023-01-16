@@ -137,7 +137,7 @@ function Contact() {
             ></textarea>
           </div>
           <div className="butntn">
-            <button type="submit" className="button2">
+            <button type="submit" className="button2 signut">
               SEND
             </button>
           </div>

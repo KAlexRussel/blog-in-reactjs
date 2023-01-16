@@ -118,21 +118,15 @@ textarea:hover {
   font-family: "Roboto Serif", serif;
 }
 .submitbut {
-  padding: 8px 7px;
-  max-width: 100px;
+  /* padding: 8px 7px; */
+  /* max-width: 100px; */
 
   width: 100%;
-  background-color: hsl(104, 53%, 42%);
+  /* background-color: hsl(114, 91%, 37%); */
   border: 1px solid grey;
-  border-radius: 5px;
-  font-weight: 600;
+  /* border-radius: 5px;
+  font-weight: 600; */
   /* margin-bottom: 15px; */
-}
-.submitbut:hover {
-  background-color: #181819;
-  color: #fff;
-}
-.gobackbtn {
   padding: 8px 7px;
   max-width: 100px;
   width: 100%;
@@ -140,6 +134,30 @@ textarea:hover {
   border-radius: 5px;
   font-weight: 600;
   background-color: #6190e8;
+  color: #fff;
+  font-family: "Roboto Serif", serif;
+}
+.submitbut:hover {
+  background-color: #181819;
+  color: #fff;
+}
+.gobackbtn {
+  /* padding: 8px 7px; */
+  max-width: 100px;
+  width: 100%;
+  border: 1px solid grey;
+  /* border-radius: 5px; */
+  /* font-weight: 600; */
+  background-color: #6190e8;
+  padding: 8px 7px;
+  max-width: 100px;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #6190e8;
+  color: #fff;
+  font-family: "Roboto Serif", serif;
 }
 .gobackbtn:hover {
   background-color: #181819;
@@ -156,4 +174,11 @@ textarea:hover {
 
 #file-upload-button {
   background-color: #6190e8;
+}
+
+@media screen and (max-width: 420px) {
+  /* .editform {
+    margin: 6px 3px;
+    width: 100%;
+  } */
 }

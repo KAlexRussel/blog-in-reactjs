@@ -22,7 +22,7 @@
   /* max-width: 149px; */
   font-family: "Roboto Serif", serif;
   width: 100%;
-  background-color: hsl(104, 53%, 42%);
+  background-color: #6190e8;
   border: 1px solid grey;
   border-radius: 5px;
   font-weight: 600;
@@ -30,4 +30,8 @@
   margin-bottom: 10px;
   display: block;
   margin: 8px auto;
+}
+.signbut:hover {
+  background-color: #181819;
+  color: #fff;
 }

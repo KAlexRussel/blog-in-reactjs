@@ -11,6 +11,7 @@ import { Paper } from "@mui/material";
 
 import "./editblog.css";
 import { useEffect } from "react";
+import Logo from "../../component/logo/Logo";
 
 //m8urlyzp
 const initialState = {
@@ -30,23 +31,23 @@ function AddEditBlog() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  useEffect(() => {
-    if (!id) {
-      setEditMode(true);
-      getsingelBlog(id);
-    } else {
-      setEditMode(false);
-      setFormValue(...initialState);
-    }
-  }, [id]);
-  const getsingelBlog = async (id) => {
-    const singleBlog = await axios.get(`http://localhost:3006/blogs/${id}`);
-    if (singleBlog.status === 200) {
-      setFormValue({ ...singleBlog.data });
-    } else {
-      toast.error("something when wrong");
-    }
-  };
+  // useEffect(() => {
+  //   if (!id) {
+  //     setEditMode(true);
+  //     getsingelBlog(id);
+  //   } else {
+  //     setEditMode(false);
+  //     setFormValue(...initialState);
+  //   }
+  // }, [id]);
+  // const getsingelBlog = async (id) => {
+  //   const singleBlog = await axios.get(`http://localhost:3006/blogs/${id}`);
+  //   if (singleBlog.status === 200) {
+  //     setFormValue({ ...singleBlog.data });
+  //   } else {
+  //     toast.error("something when wrong");
+  //   }
+  // };
 
   const getDate = () => {
     let today = new Date();
@@ -99,6 +100,8 @@ function AddEditBlog() {
 
       // setFormValue({ title: "", description: "", category: "", imageUrl: "" });
       // navigate("/");
+    } else {
+      toast.error("something went wrong");
     }
   };
   const onInputChange = (e) => {
@@ -113,7 +116,13 @@ function AddEditBlog() {
 
     fileReader.onload = () => {
       // resolve(fileReader.result);
-      console.log(fileReader.result);
+      // console.log(fileReader.result);
+      console.log("converted succesully");
+      const imgString = fileReader.result;
+      // // return imgString;
+      // console.log(imgString);
+      setFormValue({ ...formValue, imageUrl: imgString });
+      console.log(imageUrl);
     };
     fileReader.onerror = (error) => {
       // reject(error);
@@ -124,29 +133,8 @@ function AddEditBlog() {
   const onUploadImage = (e) => {
     const file = e.target.files[0];
     console.log("file", e.target.files[0]);
-    // const fileReader = new FileReader();
-    // fileReader.readAsDataURL(file);
 
-    // fileReader.onload = () => {
-    //   // resolve(fileReader.result);
-    //   console.log(fileReader.result);
-    // };
-    // fileReader.onerror = (error) => {
-    //   // reject(error);
-    //   console.log("Error:", error);
-    // };
-    // const imgbase64 = file;
-    let imgbase64;
-    convertBase64(file)
-      .then((result) => {
-        imgbase64 = result;
-      })
-      .catch((e) => console.log(e));
-
-    // const imgbase64 = convertBase64(file);
-    // console.log(imgbase64);
-
-    setFormValue({ ...formValue, imageUrl: imgbase64 });
+    convertBase64(file);
 
     //send the image to cloundinary to convert it to a link
     // const formData = new FormData();
@@ -178,107 +166,135 @@ function AddEditBlog() {
     setFormValue({ ...formValue, category: e.target.value });
   };
   return (
-    <div className="editwrap">
-      <Paper elevation={3} className="editform">
-        <form action="" onSubmit={handleSubmit}>
-          <div>
-            <p className="headerww">{!editMode ? "Upadte blog" : "Add Blog"}</p>
+    <>
+      <Logo />
+
+      <div className="editwrap">
+        <Paper elevation={3} className="editform">
+          <form action="" onSubmit={handleSubmit}>
             <div>
-              <div className="">
-                <div>
-                  <label htmlFor="fname">Title:</label>
+              <p className="headerww">Add Blog</p>
+              <div>
+                <div className="">
+                  <div>
+                    <label htmlFor="fname">Title:</label>
+                  </div>
+                  <div>
+                    <input
+                      className="title2"
+                      type="text"
+                      value={title || ""}
+                      name="title"
+                      onChange={onInputChange}
+                      label="Title"
+                      placeholder="Enter the title"
+                      required
+                      // validation="Please provide a title"
+                      invalid="true"
+                    />
+                  </div>
+
+                  <br />
                 </div>
-                <div>
-                  <input
-                    className="title2"
+                <div className="input2">
+                  <label htmlFor="fname">Description:</label>
+                  <textarea
+                    className="textinput"
                     type="text"
-                    value={title || ""}
-                    name="title"
+                    value={description || ""}
+                    name="description"
                     onChange={onInputChange}
-                    label="Title"
-                    placeholder="Enter the title"
+                    placeholder="Enter the Description"
                     required
-                    // validation="Please provide a title"
+                    validation="Please provide a Description"
+                    textarea="true"
+                    rows={4}
                     invalid="true"
                   />
+
+                  <br />
+                </div>
+                <div className="input2">
+                  <div>
+                    <label htmlFor="fname">Upload An Image:</label>
+                  </div>
+                  <div>
+                    <input
+                      className="imageupload"
+                      type="file"
+                      onChange={onUploadImage}
+                      required
+                      validation="Please provide an image"
+                      invalid="true"
+                    />
+                  </div>
+
+                  <br />
+                </div>
+                <div className="input2">
+                  <div>
+                    <label htmlFor="fname">Select a category:</label>
+                  </div>
+                  <div>
+                    <select
+                      className="categorydropdown"
+                      onChange={onCategoryChange}
+                      value={category}
+                    >
+                      <option>please select category</option>
+                      {options.map((option, index) => (
+                        <option value={option || ""} key={index}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    {/* <div className="">
+                    <div>
+                      <label htmlFor="fname">add category:</label>
+                    </div>
+                    <div>
+                      <input
+                        className="title2"
+                        type="text"
+                        value={category || ""}
+                        name="title"
+                        onChange={onInputChange}
+                        label="Title"
+                        placeholder="Enter the title"
+                        required
+                        // validation="Please provide a title"
+                        invalid="true"
+                      />
+                    </div>
+
+                    <br />
+                  </div> */}
+                  </div>
                 </div>
 
+                {categoryErrmsg && (
+                  <div className="categoryerrormsg">{categoryErrmsg} </div>
+                )}
                 <br />
-              </div>
-              <div className="input2">
-                <label htmlFor="fname">Description:</label>
-                <textarea
-                  className="textinput"
-                  type="text"
-                  value={description || ""}
-                  name="description"
-                  onChange={onInputChange}
-                  placeholder="Enter the Description"
-                  required
-                  validation="Please provide a Description"
-                  textarea="true"
-                  rows={4}
-                  invalid="true"
-                />
-
                 <br />
-              </div>
-              <div className="input2">
-                <div>
-                  <label htmlFor="fname">Upload An Image:</label>
-                </div>
-                <div>
-                  <input
-                    className="imageupload"
-                    type="file"
-                    onChange={onUploadImage}
-                    required
-                    validation="Please provide an image"
-                    invalid="true"
-                  />
-                </div>
-
-                <br />
-              </div>
-              <div className="input2">
-                <div>
-                  <label htmlFor="fname">Select a category:</label>
-                </div>
-                <div>
-                  <select
-                    className="categorydropdown"
-                    onChange={onCategoryChange}
-                    value={category}
+                <div className="btm">
+                  <button type="submit" className="submitbut signut">
+                    {" "}
+                    ADD
+                  </button>
+                  <button
+                    className="gobackbtn signut"
+                    onClick={() => navigate("/")}
                   >
-                    <option>please select category</option>
-                    {options.map((option, index) => (
-                      <option value={option || ""} key={index}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    go back
+                  </button>
                 </div>
-              </div>
-
-              {categoryErrmsg && (
-                <div className="categoryerrormsg">{categoryErrmsg} </div>
-              )}
-              <br />
-              <br />
-              <div className="btm">
-                <button type="submit" className="submitbut">
-                  {" "}
-                  ADD
-                </button>
-                <button className="gobackbtn" onClick={() => navigate("/")}>
-                  go back
-                </button>
               </div>
             </div>
-          </div>
-        </form>
-      </Paper>
-    </div>
+          </form>
+        </Paper>
+      </div>
+    </>
   );
 }
 export default AddEditBlog;

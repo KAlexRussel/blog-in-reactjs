@@ -92,21 +92,29 @@ form {
 }
 .button2 {
   background-color: #6190e8;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   max-width: 100px;
   width: 100%;
-  height: 30px;
-  padding: 7px 22px;
+  /* height: 30px;
+  padding: 7px 22px; */
   margin: 1px auto;
   outline: none;
-  font-weight: 600;
-  transition: 1s;
+  /* font-weight: 600; */
+  /* transition: 1s; */
   align-items: center;
   margin: 2px auto;
+  padding: 8px 7px;
+  max-width: 100px;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #6190e8;
+  color: #fff;
+  font-family: "Roboto Serif", serif;
 }
 .button2:hover {
   background-color: black;
-  color: #6190e8;
 }
 .butntn {
   align-items: center;

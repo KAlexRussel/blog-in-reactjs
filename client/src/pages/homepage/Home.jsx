@@ -32,7 +32,7 @@ function Home() {
   //     toast.error("something when wrong");
   //   }
   // };
-  console.log("data", data);
+  // console.log("data", data);
 
   const handleDelete = async (id) => {
     if (window.confirm("do you really want to delete this blog?")) {

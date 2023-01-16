@@ -39,3 +39,9 @@
   padding: 1rem;
   margin-top: 1.5rem;
 }
+
+@media screen and (max-width: 750px) {
+  .blog-wrap img {
+    padding: 10px;
+  }
+}

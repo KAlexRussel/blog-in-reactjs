@@ -1,12 +1,12 @@
 import React from "react";
-// import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 // import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
 import { Paper } from "@mui/material";
-import axios from "axios";
-import { toast } from "react-toastify";
+// import axios from "axios";
+// import { toast } from "react-toastify";
 
 import "./login.css";
+import Logo from "../../component/logo/Logo";
 const initialState = {
   username: "",
   password: "",
@@ -14,7 +14,22 @@ const initialState = {
 const Login = () => {
   const [formValue, setFormValue] = useState(initialState);
   const { username, password } = formValue;
-  // const useRef = useRef();
+  const userRef = useRef();
+  const errRef = useRef();
+  const [errMsg, setErrMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    // userRef.current.focus();
+  }, []);
+  useEffect(() => {
+    setErrMsg("");
+  }, [username, password]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(username, password);
+    setSuccess(true);
+  };
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -53,70 +68,91 @@ const Login = () => {
     setFormValue({ ...formValue, [name]: value });
   };
   return (
-    <div className="editwrap">
-      <Paper elevation={3} className="loginform">
-        <form action="">
-          <div>
-            <p className="headerww">Sign In</p>
-            <div>
-              <div className="">
-                <div>
-                  <label htmlFor="fname">Username:*</label>
-                </div>
-                <div>
-                  <input
-                    className="title2"
-                    type="text"
-                    value={username || ""}
-                    name="title"
-                    onChange={onInputChange}
-                    label="Title"
-                    placeholder="Enter the user name"
-                    required
-                    // validation="Please provide a title"
-                    invalid="true"
-                  />
-                </div>
-
-                <br />
-              </div>
-              <div className="">
-                <div>
-                  <label htmlFor="fname">Password:*</label>
-                </div>
-                <div>
-                  <input
-                    className="title2"
-                    type="password"
-                    value={password || ""}
-                    name="password"
-                    onChange={onInputChange}
-                    label="Title"
-                    placeholder="Enter the password"
-                    required
-                    // validation="Please provide a title"
-                    invalid="true"
-                  />
-                </div>
-
-                <br />
-              </div>
-
-              <div className="btnn">
-                <button type="submit" className="signbut">
-                  Sign In
-                </button>
-              </div>
+    <>
+      <Logo />
+      {success ? (
+        <section>
+          <h1>your are logged in!</h1>
+          <br />
+          <p>
+            <a href="/"> go to home</a>
+          </p>
+        </section>
+      ) : (
+        <div className="editwrap">
+          <Paper elevation={3} className="loginform">
+            <p
+              ref={errRef}
+              className={errMsg ? "errmsg" : "offscreen"}
+              aria-live="assertive"
+            >
+              {errMsg}
+            </p>
+            <form onSubmit={handleSubmit}>
               <div>
-                <p>
-                  Need an Account? <a href="/">Sign Up</a>
-                </p>
+                <p className="headerww">Sign In</p>
+                <div>
+                  <div className="">
+                    <div>
+                      <label htmlFor="fname">Username:*</label>
+                    </div>
+                    <div>
+                      <input
+                        className="title2"
+                        type="text"
+                        value={username || ""}
+                        name="username"
+                        onChange={onInputChange}
+                        label="Title"
+                        placeholder="Enter the user name"
+                        required
+                        // validation="Please provide a title"
+                        invalid="true"
+                      />
+                    </div>
+                  </div>
+                  <div className="">
+                    <div>
+                      <label htmlFor="fname">Password:*</label>
+                    </div>
+                    <div>
+                      <input
+                        className="title2"
+                        type="password"
+                        value={password || ""}
+                        name="password"
+                        onChange={onInputChange}
+                        label="Title"
+                        placeholder="Enter the password"
+                        required
+                        // validation="Please provide a title"
+                        invalid="true"
+                      />
+                    </div>
+
+                    <br />
+                  </div>
+
+                  <div className="btnn">
+                    <button type="submit" className="signbut">
+                      Sign In
+                    </button>
+                  </div>
+                  <div>
+                    <p>
+                      Need an Account?{" "}
+                      <a href="/signup">
+                        <strong>Sign Up</strong>
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </form>
-      </Paper>
-    </div>
+            </form>
+          </Paper>
+        </div>
+      )}
+    </>
   );
 };
 

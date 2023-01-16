@@ -21,7 +21,7 @@ function Navbar() {
           className={Mobile ? "navbar-links" : "navbar-links-mobile"}
           onClick={() => setMobile(false)}
         >
-          <ul>
+          <ul className="ulls">
             <li className="nav-link">
               <a href="/">HOME</a>
             </li>
@@ -36,6 +36,11 @@ function Navbar() {
             </li>
             <li className="nav-link">
               <a href="/contact">CONTACT</a>
+            </li>
+            <li className="nav-link">
+              <a href="/signup">
+                <button className="signut">Sign up</button>
+              </a>
             </li>
           </ul>
         </div>
