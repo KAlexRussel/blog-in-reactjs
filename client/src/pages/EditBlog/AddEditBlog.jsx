@@ -3,14 +3,14 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 // import Navbar from "../../component/navbar/Navbar";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import Paper from "@mui/material/Paper";
 // or
 import { Paper } from "@mui/material";
 
 import "./editblog.css";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Logo from "../../component/logo/Logo";
 
 //m8urlyzp
@@ -25,11 +25,11 @@ const options = ["Travel", "Fashion", "cooking", "sports", "Food", "Tech"];
 function AddEditBlog() {
   const [formValue, setFormValue] = useState(initialState);
   const [categoryErrmsg, setCategoryErrMsg] = useState(null);
-  const [editMode, setEditMode] = useState(false);
+  // const [editMode, setEditMode] = useState(false);
   const { title, description, category, imageUrl } = formValue;
 
   const navigate = useNavigate();
-  const { id } = useParams();
+  // const { id } = useParams();
 
   // useEffect(() => {
   //   if (!id) {
@@ -55,7 +55,7 @@ function AddEditBlog() {
     let mm = String(today.getMonth() + 1).padStart(2, "0"); //
     let yyyy = today.getFullYear();
 
-    today = mm + "/" + dd + "/" + yyyy;
+    today = mm + "/home" + dd + "/home" + yyyy;
 
     return today;
   };
@@ -84,7 +84,7 @@ function AddEditBlog() {
             category: "",
             imageUrl: "",
           });
-          navigate("/");
+          navigate("/home");
         })
         .catch((err) => {
           toast.error("something went wrong");
@@ -99,7 +99,7 @@ function AddEditBlog() {
       // }
 
       // setFormValue({ title: "", description: "", category: "", imageUrl: "" });
-      // navigate("/");
+      // navigate("/home");
     } else {
       toast.error("something went wrong");
     }
@@ -185,6 +185,7 @@ function AddEditBlog() {
                       type="text"
                       value={title || ""}
                       name="title"
+                      autoComplete="off"
                       onChange={onInputChange}
                       label="Title"
                       placeholder="Enter the title"
@@ -203,6 +204,7 @@ function AddEditBlog() {
                     type="text"
                     value={description || ""}
                     name="description"
+                    autoComplete="off"
                     onChange={onInputChange}
                     placeholder="Enter the Description"
                     required
@@ -284,7 +286,7 @@ function AddEditBlog() {
                   </button>
                   <button
                     className="gobackbtn signut"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/home")}
                   >
                     go back
                   </button>

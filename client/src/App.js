@@ -21,14 +21,14 @@ function App() {
       <div className="app">
         <ToastContainer />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route exact path="/blog/:id" element={<Blog />} />
           <Route exact path="/addblog" element={<AddEditBlog />} />
           <Route exact path="/editblog/:id" element={<AddEditBlog1 />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/blog" element={<Blog1 />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="*" element={<Notfound />} />
         </Routes>

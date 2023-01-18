@@ -4,7 +4,7 @@ import "./logo.css";
 const Logo = () => {
   return (
     <div>
-      <a href="/">
+      <a href="/home">
         <div className="head4">
           <p>KUAVO ALEX'S BLOG</p>
         </div>

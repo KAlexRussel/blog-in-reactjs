@@ -77,16 +77,16 @@ function AddEditBlog1() {
   //   }
   // };
 
-  const getDate = () => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, "0");
-    let mm = String(today.getMonth() + 1).padStart(2, "0"); //
-    let yyyy = today.getFullYear();
+  // const getDate = () => {
+  //   let today = new Date();
+  //   let dd = String(today.getDate()).padStart(2, "0");
+  //   let mm = String(today.getMonth() + 1).padStart(2, "0"); //
+  //   let yyyy = today.getFullYear();
 
-    today = mm + "/" + dd + "/" + yyyy;
+  //   today = mm + "/home" + dd + "/home" + yyyy;
 
-    return today;
-  };
+  //   return today;
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -112,7 +112,7 @@ function AddEditBlog1() {
       //         category: "",
       //         imageUrl: "",
       //       });
-      //       navigate("/");
+      //       navigate("/home");
       //     })
       //     .catch((err) => {
       //       toast.error("something went wrong");
@@ -131,7 +131,7 @@ function AddEditBlog1() {
             category: "",
             imageUrl: "",
           });
-          navigate("/");
+          navigate("/home");
         })
         .catch((err) => {
           // toast.error("something went wrong");
@@ -147,7 +147,7 @@ function AddEditBlog1() {
       // }
 
       // setFormValue({ title: "", description: "", category: "", imageUrl: "" });
-      // navigate("/");
+      // navigate("/home");
     }
   };
   const convertBase64 = (file) => {
@@ -229,6 +229,7 @@ function AddEditBlog1() {
                     type="text"
                     value={title || ""}
                     name="title"
+                    autoComplete="off"
                     onChange={onInputChange}
                     label="Title"
                     placeholder="Title"
@@ -247,6 +248,7 @@ function AddEditBlog1() {
                   type="text"
                   value={description || ""}
                   name="description"
+                  autoComplete="off"
                   onChange={onInputChange}
                   label="Description"
                   placeholder="Enter the Description"

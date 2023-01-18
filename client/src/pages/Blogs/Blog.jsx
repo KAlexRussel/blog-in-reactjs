@@ -74,7 +74,7 @@ const Blog = () => {
     <>
       <Navbar />
       <Logo />
-      {/* <Link className="blog-goBack" to="/">
+      {/* <Link className="blog-goBack" to="/home">
         <span> &#8592;</span> <span>Go Back</span>
       </Link> */}
 
@@ -102,7 +102,7 @@ const Blog = () => {
             </div>
           </Link>
           <div>
-            <Link to={"/"}>
+            <Link to={"/home"}>
               <button className="fus" onClick={() => handleDelete(id)}>
                 <i className="fa fa-trash" aria-hidden="true"></i>
               </button>

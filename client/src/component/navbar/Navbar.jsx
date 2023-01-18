@@ -23,7 +23,7 @@ function Navbar() {
         >
           <ul className="ulls">
             <li className="nav-link">
-              <a href="/">HOME</a>
+              <a href="/home">HOME</a>
             </li>
             {/* <li className="nav-link">
               <a href="/blog">BLOG</a>
@@ -38,18 +38,19 @@ function Navbar() {
               <a href="/contact">CONTACT</a>
             </li>
             <li className="nav-link">
-              <a href="/signup">
-                <button className="signut">Sign up</button>
+              <a href="/login">
+                <button className="signut">Sign in</button>
               </a>
             </li>
           </ul>
         </div>
         <div className="toggle-button" onClick={() => setMobile(!Mobile)}>
-          {Mobile ? (
+          {/* {Mobile ? (
             <i className="fa-solid fa-bars"></i>
           ) : (
             <i className="fa-solid fa-xmark"></i>
-          )}
+          )} */}
+          <i className={Mobile ? "fa-solid fa-bars" : "fa-solid fa-xmark"}></i>
         </div>
       </nav>
       <hr />

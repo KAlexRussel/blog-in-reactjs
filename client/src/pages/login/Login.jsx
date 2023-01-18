@@ -1,9 +1,10 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
+import AuthContext from "../../context/AuthProvider";
 // import { useNavigate, useParams } from "react-router-dom";
 import { Paper } from "@mui/material";
-// import axios from "axios";
-// import { toast } from "react-toastify";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 import "./login.css";
 import Logo from "../../component/logo/Logo";
@@ -18,17 +19,59 @@ const Login = () => {
   const errRef = useRef();
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [eye, setEye] = useState(false);
+  const { setAuth } = useContext(AuthContext);
 
   useEffect(() => {
-    // userRef.current.focus();
+    userRef.current.focus();
   }, []);
+
   useEffect(() => {
     setErrMsg("");
   }, [username, password]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
-    setSuccess(true);
+    try {
+      const updateBlogData = { ...formValue };
+      console.log(updateBlogData);
+      const response = axios
+        .post("http://localhost:3006/Signup", updateBlogData)
+        .then((resp) => {
+          toast.success("Registered   Successfully");
+          console.log("Response", resp);
+
+          setFormValue({
+            ...formValue,
+            username: "",
+            password: "",
+          });
+          // navigate("/login");
+        })
+        .catch((err) => {
+          toast.error("something went wrong");
+          console.log("something when wrong");
+        });
+      //console.log(JSON.stringify(response));
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setAuth({ username, password, roles, accessToken });
+      // setUser("");
+      // setPwd("");
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
 
   // const handleSubmit = async (e) => {
@@ -51,7 +94,7 @@ const Login = () => {
   //           username: "",
   //           password: "",
   //         });
-  //         // navigate("/");
+  //         // navigate("/home");
   //       })
   //       .catch((err) => {
   //         toast.error("something went wrong");
@@ -67,6 +110,21 @@ const Login = () => {
 
     setFormValue({ ...formValue, [name]: value });
   };
+
+  const showHidePassword = (e) => {
+    e.preventDefault();
+
+    const x = document.getElementById("password");
+
+    if (x.type === "password") {
+      x.type = "text";
+      setEye(true);
+    } else {
+      x.type = "password";
+      setEye(false);
+    }
+  };
+
   return (
     <>
       <Logo />
@@ -75,7 +133,7 @@ const Login = () => {
           <h1>your are logged in!</h1>
           <br />
           <p>
-            <a href="/"> go to home</a>
+            <a href="/home"> go to home</a>
           </p>
         </section>
       ) : (
@@ -100,11 +158,13 @@ const Login = () => {
                       <input
                         className="title2"
                         type="text"
+                        ref={userRef}
                         value={username || ""}
                         name="username"
+                        autoComplete="off"
                         onChange={onInputChange}
                         label="Title"
-                        placeholder="Enter the user name"
+                        placeholder="Enter your user name"
                         required
                         // validation="Please provide a title"
                         invalid="true"
@@ -115,22 +175,33 @@ const Login = () => {
                     <div>
                       <label htmlFor="fname">Password:*</label>
                     </div>
-                    <div>
+                    <div className="pasword">
                       <input
                         className="title2"
                         type="password"
+                        id="password"
+                        ref={userRef}
+                        autoComplete="off"
                         value={password || ""}
                         name="password"
                         onChange={onInputChange}
                         label="Title"
-                        placeholder="Enter the password"
+                        placeholder="Enter your  password"
                         required
                         // validation="Please provide a title"
                         invalid="true"
                       />
+                      <button onClick={showHidePassword} className="togglerp">
+                        <i
+                          className={
+                            eye && password ? "fa fa-eye" : "fa fa-eye-slash"
+                          }
+                          aria-hidden="true"
+                        ></i>
+                      </button>
                     </div>
 
-                    <br />
+                    {/* <br /> */}
                   </div>
 
                   <div className="btnn">

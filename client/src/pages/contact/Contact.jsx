@@ -29,7 +29,7 @@ function Contact() {
     let mm = String(today.getMonth() + 1).padStart(2, "0"); //
     let yyyy = today.getFullYear();
 
-    today = mm + "/" + dd + "/" + yyyy;
+    today = mm + "/home" + dd + "/home" + yyyy;
 
     return today;
   };
@@ -58,7 +58,7 @@ function Contact() {
             telephone: "",
             message: "",
           });
-          navigate("/");
+          navigate("/home");
         })
         .catch((err) => {
           toast.error("something went wrong");
