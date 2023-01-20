@@ -61,7 +61,13 @@
       "id": 1
     }
   ],
-  "login": [],
+  "login": [
+    {
+      "username": "alex",
+      "password": "2000alex",
+      "id": 1
+    }
+  ],
   "signup": [
     {
       "username": "alex",
@@ -107,6 +113,22 @@
       "username": "allls",
       "password": "alal",
       "id": 6
+    },
+    {
+      "username": "alex",
+      "password": "ALex2000@",
+      "telephone": "888888888",
+      "email": "alex@woo",
+      "confirmpassword": "ALex2000@",
+      "id": 7
+    },
+    {
+      "username": "kjsabdas",
+      "password": "Qlex222@",
+      "telephone": "222222222",
+      "email": ".asmas@aa",
+      "confirmpassword": "Qlex222@",
+      "id": 8
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "../../context/AuthProvider";
+// import AuthContext from "../../context/AuthProvider";
 // import { useNavigate, useParams } from "react-router-dom";
 import { Paper } from "@mui/material";
 import axios from "axios";
@@ -20,7 +20,7 @@ const Login = () => {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
   const [eye, setEye] = useState(false);
-  const { setAuth } = useContext(AuthContext);
+  // const { setAuth } = useContext(AuthContext);
 
   useEffect(() => {
     userRef.current.focus();
@@ -37,9 +37,9 @@ const Login = () => {
       const updateBlogData = { ...formValue };
       console.log(updateBlogData);
       const response = axios
-        .post("http://localhost:3006/Signup", updateBlogData)
+        .post("http://localhost:3006/login", updateBlogData)
         .then((resp) => {
-          toast.success("Registered   Successfully");
+          toast.success("login   Successfully");
           console.log("Response", resp);
 
           setFormValue({
@@ -47,16 +47,16 @@ const Login = () => {
             username: "",
             password: "",
           });
-          // navigate("/login");
+          // navigate("/");
         })
         .catch((err) => {
           toast.error("something went wrong");
           console.log("something when wrong");
         });
       //console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({ username, password, roles, accessToken });
+      // const accessToken = response?.data?.accessToken;
+      // const roles = response?.data?.roles;
+      // setAuth({ username, password, roles, accessToken });
       // setUser("");
       // setPwd("");
       setSuccess(true);
@@ -81,19 +81,20 @@ const Login = () => {
   //   if (username && password) {
   //     // const currentDate = getDate();
   //     //axios is use perfome the crud operations
-  //     const updateBlogData = { ...formValue };
-  //     console.log(updateBlogData);
+  //     // const updateBlogData = { ...formValue };
+  //     // console.log(updateBlogData);
   //     const response = await axios
-  //       .post("http://localhost:3006/Login", updateBlogData)
+  //       .get("http://localhost:3006/signup")
   //       .then((resp) => {
-  //         toast.success("Message sent Successfully");
+  //         // toast.success("Message sent Successfully");
   //         console.log("Response", resp);
+  //         if (resp.password === password && resp.username === username) {
+  //           // toast.success("")
+  //           setSuccess(true);
+  //         } else {
+  //           toast.error("something went wrong");
+  //         }
 
-  //         setFormValue({
-  //           ...formValue,
-  //           username: "",
-  //           password: "",
-  //         });
   //         // navigate("/home");
   //       })
   //       .catch((err) => {
@@ -101,7 +102,7 @@ const Login = () => {
   //         console.log("something when wrong");
   //       });
 
-  //     console.log(response);
+  //     // console.log(response);
   //   }
   // };
 

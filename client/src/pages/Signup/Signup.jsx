@@ -94,7 +94,7 @@ const Signup = () => {
             username: "",
             password: "",
           });
-          navigate("/login");
+          navigate("/");
         })
         .catch((err) => {
           toast.error("something went wrong");
@@ -459,7 +459,7 @@ const Signup = () => {
                 <div>
                   <p>
                     have already an Account?{" "}
-                    <a href="/login">
+                    <a href="/">
                       <strong>Sign In</strong>
                     </a>
                   </p>

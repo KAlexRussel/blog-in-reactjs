@@ -54,10 +54,10 @@
   border: 1px solid grey;
   background-color: white;
 }
-.togglerp:hover {
+/* .togglerp:hover {
   background-color: #181818;
   color: #fff;
-}
+} */
 
 .pasword1 {
   width: 100%; /* Full width */
