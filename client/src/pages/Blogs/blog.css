@@ -14,7 +14,9 @@
 .blog-wrap header {
   text-align: center;
 }
-
+/* .image3 {
+  width: 100px;
+} */
 .blog-date {
   font-size: 0.8rem;
   color: #a9a9a9;
@@ -25,6 +27,8 @@
 
 .blog-wrap img {
   width: 100%;
+  /* height: auto;
+  image-resolution: inherit; */
 }
 
 .blog-subCategory {

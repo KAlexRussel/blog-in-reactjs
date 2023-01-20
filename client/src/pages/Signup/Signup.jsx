@@ -213,6 +213,109 @@ const Signup = () => {
                     Letters, numbers, underscores, hyphens allowed.
                   </p>
                 </div>
+
+                <div className="">
+                  <div>
+                    <label htmlFor="fname">
+                      Email:*
+                      <i
+                        className={
+                          validEmail ? "fa fa-check valid" : "fa fa-check hide"
+                        }
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        className={
+                          validEmail || !email
+                            ? "fa fa-times hide"
+                            : "fa fa-times invalid"
+                        }
+                        aria-hidden="true"
+                      ></i>
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      className="title2"
+                      type="email"
+                      ref={userRef}
+                      autoComplete="off"
+                      value={email || ""}
+                      name="email"
+                      onChange={onInputChange}
+                      label="Title"
+                      placeholder="Enter your email"
+                      required
+                      // validation="Please provide a title"
+                      aria-describedby="emailnote"
+                      onFocus={() => setEmailFocus(true)}
+                      onBlur={() => setEmailFocus(false)}
+                    />
+                  </div>
+                  <p
+                    id="emailnote"
+                    className={
+                      emailFocus && !validEmail && email
+                        ? "instructions"
+                        : "offscreen"
+                    }
+                  >
+                    <i className="fa fa-info-circle" aria-hidden="true"></i>
+                    Your Email must contain the @ character.
+                  </p>
+                </div>
+                <div className="">
+                  <div>
+                    <label htmlFor="fname">
+                      Phone Number:*
+                      <i
+                        className={
+                          validPhone ? "fa fa-check valid" : "fa fa-check hide"
+                        }
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        className={
+                          validPhone || !telephone
+                            ? "fa fa-times hide"
+                            : "fa fa-times invalid"
+                        }
+                        aria-hidden="true"
+                      ></i>
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      className="title2"
+                      type="tel"
+                      ref={userRef}
+                      autoComplete="off"
+                      value={telephone || ""}
+                      name="telephone"
+                      onChange={onInputChange}
+                      label="Title"
+                      placeholder="Enter the telephone number"
+                      required
+                      aria-describedby="phonenote"
+                      onFocus={() => setPhoneFocus(true)}
+                      onBlur={() => setPhoneFocus(false)}
+                    />
+                  </div>
+                  <p
+                    id="phonenote"
+                    className={
+                      phoneFocus && !validPhone && telephone
+                        ? "instructions"
+                        : "offscreen"
+                    }
+                  >
+                    <i className="fa fa-info-circle" aria-hidden="true"></i>
+                    IT should be exactly 10 digit. NO letters is accepted only
+                    digit
+                  </p>
+                  {/* 
+                  <br /> */}
+                </div>
                 <div className="">
                   <div>
                     <label htmlFor="fname">
@@ -344,109 +447,6 @@ const Signup = () => {
                     Must match the first password input field.
                   </p>
                 </div>
-                <div className="">
-                  <div>
-                    <label htmlFor="fname">
-                      Email:*
-                      <i
-                        className={
-                          validEmail ? "fa fa-check valid" : "fa fa-check hide"
-                        }
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        className={
-                          validEmail || !email
-                            ? "fa fa-times hide"
-                            : "fa fa-times invalid"
-                        }
-                        aria-hidden="true"
-                      ></i>
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      className="title2"
-                      type="email"
-                      ref={userRef}
-                      autoComplete="off"
-                      value={email || ""}
-                      name="email"
-                      onChange={onInputChange}
-                      label="Title"
-                      placeholder="Enter your email"
-                      required
-                      // validation="Please provide a title"
-                      aria-describedby="emailnote"
-                      onFocus={() => setEmailFocus(true)}
-                      onBlur={() => setEmailFocus(false)}
-                    />
-                  </div>
-                  <p
-                    id="emailnote"
-                    className={
-                      emailFocus && !validEmail && email
-                        ? "instructions"
-                        : "offscreen"
-                    }
-                  >
-                    <i className="fa fa-info-circle" aria-hidden="true"></i>
-                    Your Email must contain the @ character.
-                  </p>
-                </div>
-                <div className="">
-                  <div>
-                    <label htmlFor="fname">
-                      Phone Number:*
-                      <i
-                        className={
-                          validPhone ? "fa fa-check valid" : "fa fa-check hide"
-                        }
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        className={
-                          validPhone || !telephone
-                            ? "fa fa-times hide"
-                            : "fa fa-times invalid"
-                        }
-                        aria-hidden="true"
-                      ></i>
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      className="title2"
-                      type="tel"
-                      ref={userRef}
-                      autoComplete="off"
-                      value={telephone || ""}
-                      name="telephone"
-                      onChange={onInputChange}
-                      label="Title"
-                      placeholder="Enter the telephone number"
-                      required
-                      aria-describedby="phonenote"
-                      onFocus={() => setPhoneFocus(true)}
-                      onBlur={() => setPhoneFocus(false)}
-                    />
-                  </div>
-                  <p
-                    id="phonenote"
-                    className={
-                      phoneFocus && !validPhone && telephone
-                        ? "instructions"
-                        : "offscreen"
-                    }
-                  >
-                    <i className="fa fa-info-circle" aria-hidden="true"></i>
-                    IT should be exactly 10 digit. NO letters is accepted only
-                    digit
-                  </p>
-                  {/* 
-                  <br /> */}
-                </div>
-
                 <div className="btnn">
                   <button
                     type="submit"

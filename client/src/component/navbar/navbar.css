@@ -83,6 +83,7 @@ hr {
   background-color: #6190e8;
   color: #fff;
   font-family: "Roboto Serif", serif;
+  cursor: pointer;
 }
 .fa-xmark {
   color: white;

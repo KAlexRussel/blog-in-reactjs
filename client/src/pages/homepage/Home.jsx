@@ -56,8 +56,10 @@ function Home() {
   // Search for blog by category
   const handleSearchResults = () => {
     const allBlogs = data;
-    const filteredBlogs = allBlogs.filter((blog) =>
-      blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
+    const filteredBlogs = allBlogs.filter(
+      (blog) =>
+        blog.category.toLowerCase().includes(searchKey.toLowerCase().trim()) ||
+        blog.title.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setData(filteredBlogs);
   };
@@ -66,6 +68,10 @@ function Home() {
   const handleClearSearch = () => {
     setData([]);
     setSearchKey("");
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 0);
+    setData(datas);
   };
   return (
     <>

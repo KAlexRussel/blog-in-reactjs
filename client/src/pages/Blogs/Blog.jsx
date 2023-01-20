@@ -92,7 +92,7 @@ const Blog = () => {
             ))} */}
           </div>
         </header>
-        <img src={blog && blog.imageUrl} alt="cover" />
+        <img src={blog && blog.imageUrl} alt="cover" className="image3" />
         <p className="blog-desc">{blog && blog.description}</p>
         <div className="operations">
           <Link to={`/editblog/${id}`}>

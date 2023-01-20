@@ -1,6 +1,7 @@
 .blogItem-wrap {
   display: flex;
   flex-direction: column;
+  /* white-space: nowrap; */
 }
 .blogItem-cover {
   width: 100%;
@@ -8,6 +9,7 @@
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 0.5rem;
+  transition: 0.5s;
 }
 .blogItem-cover:hover {
   transform: scale(1.1);
@@ -19,13 +21,17 @@
 }
 
 .blogItem-desc {
-  position: relative;
-  max-height: 50px;
+  /* position: relative; */
+  max-height: 45px;
   overflow: hidden;
   padding-right: 0.6rem;
   font-size: 0.8rem;
   color: #181818;
   font-family: "Roboto Serif", serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  /* width: 100px; */
 }
 
 .blogItem-desc::before {
